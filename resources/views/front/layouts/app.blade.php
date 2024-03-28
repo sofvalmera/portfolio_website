@@ -24,13 +24,27 @@
         <link href="{{asset('front-assets/css/style.css')}}" rel="stylesheet">
     </head>
     <style>
-        #login-link,
+       #login-link,
 #signup-link {
     background-color: #000000;
     color: #ffffff; /* Text color */
     padding: 8px 12px; /* Adjust padding as needed */
-    margin-left:6px;
-    border-radius: 6px; /* Add rounded corners */
+    margin-left: 8px;
+    border-radius: 8px; /* Add rounded corners */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #login-link,
+    #signup-link {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 8px; /* Add top margin */
+        display: block; 
+        width: 100%; /* Set width to 100% */
+        text-align: center; /* Center-align text */
+    }
+
+
 }
 
     </style>
