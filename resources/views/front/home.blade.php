@@ -489,7 +489,7 @@
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="{{asset('front-assets/img/riz.jfif')}}" alt="Image">
+                                <img src="{{asset('front-assets/img/riz.jpg')}}" alt="Image">
                             </div>
                             <div class="team-text">
                                 <h2>Rizaldo Inghug</h2>
@@ -509,7 +509,7 @@
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="{{asset('front-assets/img/fred.jfif')}}" alt="Image">
+                                <img src="{{asset('front-assets/img/fred.png')}}" alt="Image">
                             </div>
                             <div class="team-text">
                                 <h2>Fred Fritz Agustin</h2>
