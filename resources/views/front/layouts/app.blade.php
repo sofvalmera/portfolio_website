@@ -125,16 +125,16 @@
                             <p>sofroniolvalmera@gmail.com</p>
                         </div>
                         <div class="footer-social">
+                            <a href="https://www.youtube.com/@hahaaaaaa321"><i class="fab fa-youtube"></i></a>
                             <a href="https://www.facebook.com/profile.php?id=100072440629870"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.linkedin.com/in/sofronio-l-valmera-6b7391262/"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.youtube.com/@hahaaaaaa321"><i class="fab fa-youtube"></i></a>
                             <a href="https://www.instagram.com/seess_ssh/"><i class="fab fa-instagram"></i></a>
                             
                         </div>
                     </div>
                 </div>
                 <div class="container copyright">
-                    <p>&copy; <a href="#">SJLV</a>, All Right Reserved | Designed By <a href="https://htmlcodex.com">SofValmera</a></p>
+                    <p>&copy; <a href="#">SJLV</a>, All Right Reserved | Designed By <a href="#">SofValmera</a></p>
                 </div>
             </div>
         </div>

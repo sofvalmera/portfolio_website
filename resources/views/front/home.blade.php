@@ -17,10 +17,22 @@
                                 <p>About Me</p>
                                 <h2>3 Years Experience</h2>
                             </div>
+                            
                             <div class="about-text">
-                                <p> I'm <b>Sofronio Jr. L. Valmera</b>, a third-year BSIT student at MLG College of Learning, with a passion for web development. I'm dedicated to mastering the art of web development, fueled by curiosity, creativity, and a commitment to continuous learning.
-                                </p>            
+                                <p> I'm <b>Sofronio Jr. L. Valmera</b>, a third-year BSIT student at MLG College of Learning, 
+                                with a passion for web development. I'm dedicated to mastering the art of web development, 
+                                fueled by curiosity, creativity, and a commitment to continuous learning.<br>
+                                
+                                <B>Birthday:</b> 1 December 2002 <br>
+                                <B>Phone:</b> 09263318591 <br>
+                                <B>Province:</b> Leyte, Hilongos 6524 <br>
+                                <B>Age:</b> 21 <br>
+                                <B>Degree:</b> College <br>
+                                <B>Email:</b> sofroniolvalmera@gmail.com  <br>
+                                </p>  
+                                    
                             </div>
+                            
                             <div class="skills">
                                 <div class="skill-name">
                                     <p>PHP</p><p>42%</p>
@@ -47,7 +59,7 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                            <a class="btn" href="">Learn More</a>
+                            <!-- <a class="btn" href="#service">Read More</a> -->
                         </div>
                     </div>
                 </div>
@@ -174,27 +186,44 @@
                             </p>
                         </div>
                     </div>
-                    <!-- <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+
+            </div>
+        </div>
+        <div class="container">
+                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <h2>Experience</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date">2045 - 2050</div>
-                            <h2>Web Developer</h2>
-                            <h4>Soft Agency, San Francisco, CA</h4>
+                             <div class="timeline-date">2021 - 2024</div>
+                            <h2>Web Developing</h2>
+                            <h4>Hilongos, Leyte 6524 Philippines</h4>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
+                            Frontend Development<br>
+                            Backend Development<br>
+                            Responsive Web Design
+                                
                             </p>
                         </div>
-                    </div> -->
-                    <!-- <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2045 - 2050</div>
-                            <h2>Web Developer</h2>
-                            <h4>Soft Agency, San Francisco, CA</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-                            </p>
-                        </div>
+                           
                     </div>
-                </div> -->
+                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                        <div class="timeline-date">2019 - 2020</div>
+                            <h2>Graphic Designer</h2>
+                            <h4>Hilongos, Leyte 6524 Philippines</h4>
+                            <p>
+                            Video Editing<br>
+                            Photo Editing
+                           
+                            </p>
+                        </div>
+                           
+                    </div>
+                   
+                   
+
             </div>
         </div>
         <!-- Job Experience End -->
@@ -229,7 +258,7 @@
                     <div class="col-12">
                         <ul id="portfolio-filter">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-1">System</li>
+                            <li data-filter=".filter-1">Web Design</li>
                             <li data-filter=".filter-2">Mobile Apps</li>
                             <li data-filter=".filter-3">Game Dev</li>
                         </ul>
@@ -332,111 +361,20 @@
         
         <!-- Price Start -->
          <div class="price" id="price">
-            <!--<div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Pricing Plan</p>
-                    <h2>Affordable Price</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="price-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Basic</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2><small>$</small>49<span>/ mo</span></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Bootstrap 4</li>
-                                        <li>Font Awesome 5</li>
-                                        <li>Responsive Design</li>
-                                        <li>Browser Compatibility</li>
-                                        <li>Easy To Use</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="price-item featured-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Standard</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2><small>$</small>99<span>/ mo</span></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Bootstrap 4</li>
-                                        <li>Font Awesome 5</li>
-                                        <li>Responsive Design</li>
-                                        <li>Browser Compatibility</li>
-                                        <li>Easy To Use</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="price-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Premium</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2><small>$</small>149<span>/ mo</span></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Bootstrap 4</li>
-                                        <li>Font Awesome 5</li>
-                                        <li>Responsive Design</li>
-                                        <li>Browser Compatibility</li>
-                                        <li>Easy To Use</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
+            
         </div> 
         <!-- Price End -->
         
         
         <!-- Testimonial Start -->
-        <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
+        <div class="testimonial wow fadeInUp" data-wow-delay="0.2s" id="review">
         <!-- <p>Testimonial</p> -->
             <div class="container">
                 <div class="testimonial-icon">
                     <i class="fa fa-quote-left"></i>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
-                    <div class="testimonial-item">
+                    <!-- <div class="testimonial-item">
                         <div class="testimonial-img">
                             <img src="img/testimonial-1.jpg" alt="Image">
                         </div>
@@ -447,29 +385,29 @@
                             <h3>Customer Name</h3>
                             <h4>Profession</h4>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" alt="Image">
+                            <img src="{{asset('front-assets/img/lina.jpg')}}" alt="Image">
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
+                                Kuhaon ka naho Sof. tig bunot
                             </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
+                            <h3>Melchard Lina</h3>
+                            <h4>Game Developer</h4>
                         </div>
                     </div>
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-                            <img src="img/testimonial-3.jpg" alt="Image">
+                            <img src="{{asset('front-assets/img/dexter.jpg')}}" alt="Image">
                         </div>
                         <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
+                        <p>
+                                Tagpilag lubi Sof.
                             </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
+                            <h3>Dexter Mano</h3>
+                            <h4>Web Designer</h4>
                         </div>
                     </div>
                 </div>
@@ -580,7 +518,7 @@
                     <!-- <h2>Latest Articles</h2> -->
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <!-- <div class="col-lg-6">
                         <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
                             <div class="blog-img">
                                 <img src="img/blog-1.jpg" alt="Blog">
@@ -599,24 +537,46 @@
                                 <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="col-lg-6">
+                        <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="blog-img">
+                                <img src="{{asset('front-assets/img/myblog.png')}}" alt="Blog">
+                            </div>
+                            <div class="blog-text">
+                                <h2>Portfolio Website</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Sofronio Jr. L. Valmera</p>
+                                    <p><i class="far fa-list-alt"></i>Web Develop</p>
+                                    <p><i class="far fa-calendar-alt"></i>29-March-2024</p>
+                                    <p><i class="far fa-heart"></i>10</p>
+                                </div>
+                                <p>
+                                Embark on my web development journey through my meticulously crafted online portfolio. With modern de
+                                sign and intuitive user experience, I showcase my projects while sharing insights and connecting with like-minded developers. Join me
+                                 in exploring creativity, innovation, and collaboration in the digital realm.
+                                </p>
+                                <!-- <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a> -->
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
                             <div class="blog-img">
-                                <img src="img/blog-2.jpg" alt="Blog">
+                                <img src="{{asset('front-assets/img/sales.png')}}" alt="Blog">
                             </div>
                             <div class="blog-text">
-                                <h2>Lorem ipsum dolor sit amet</h2>
+                                <h2>Sales System</h2>
                                 <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>Admin</p>
-                                    <p><i class="far fa-list-alt"></i>Apps Design</p>
-                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                    <p><i class="far fa-comments"></i>10</p>
+                                    <p><i class="far fa-user"></i>Sofronio Jr. L. Valmera</p>
+                                    <p><i class="far fa-list-alt"></i>Web Develop</p>
+                                    <p><i class="far fa-calendar-alt"></i>29-January-2024</p>
+                                    <p><i class="far fa-heart"></i>10</p>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi. Nullam eu erat lectus. Proin viverra risus vitae luctus. Proin ut ante, vitae sapien. Fusce sem ac erat rhoncus, ornare mattis nisl massa et eros vitae pulvin
+                                Embark on a captivating journey through my blog as I unveil the intricacies of my meticulously crafted Sales System. With its sleek design and user-friendly interface, I showcase the seamless shopping experience my platform offers. Join me in exploring the world of online retail, where innovation and customer satisfaction converge to redefine the future of commerce.
                                 </p>
-                                <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                                <!-- <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a> -->
                             </div>
                         </div>
                     </div>

@@ -39,5 +39,20 @@ Route::group(['prefix' => 'admin'],function(){
 
             Route::get('/logout',[HomeController::class,'logout'])->name('admin.logout');
 
+            Route::get('/adminprofile',[SettingController::class,'adminprofile'])->name('admin.profile');
+            Route::get('/change-password',[SettingController::class,'showChangePasswordForm'])->name('admin.showChangePasswordForm');
+            Route::post('/process-change-password',[SettingController::class,'processChangePassword'])->name('admin.processChangePassword');
+
+            Route::get('/getSlug',function(Request $request){
+                $slug ='';
+                if(!empty($request->title)){
+                    $slug = Str::slug($request->title);
+                }
+                return response()->json([
+                    'status' => true,
+                    'slug' => $slug
+                ]);
+            })->name('getSlug');
+
         });
     });
