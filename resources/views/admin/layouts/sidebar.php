@@ -50,6 +50,12 @@
 									<p>Certificate</p>
 								</a>
 							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">
+									<i class="nav-icon fas fa-contact"></i>
+									<p>Contact</p>
+								</a>
+							</li>
 						
 							
 							<li class="nav-item">

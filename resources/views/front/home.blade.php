@@ -23,13 +23,13 @@
                                 with a passion for web development. I'm dedicated to mastering the art of web development, 
                                 fueled by curiosity, creativity, and a commitment to continuous learning.<br>
                                 
-                                <B>Birthday:</b> 1 December 2002 <br>
+                                <!-- <B>Birthday:</b> 1 December 2002 <br>
                                 <B>Phone:</b> 09263318591 <br>
                                 <B>Province:</b> Leyte, Hilongos 6524 <br>
                                 <B>Age:</b> 21 <br>
                                 <B>Degree:</b> College <br>
                                 <B>Email:</b> sofroniolvalmera@gmail.com  <br>
-                                </p>  
+                                </p>   -->
                                     
                             </div>
                             
@@ -197,7 +197,7 @@
                     <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                         <div class="timeline-text">
                              <div class="timeline-date">2021 - 2024</div>
-                            <h2>Web Developing</h2>
+                            <h2>Web Developer</h2>
                             <h4>Hilongos, Leyte 6524 Philippines</h4>
                             <p>
                             Frontend Development<br>
@@ -392,7 +392,7 @@
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Kuhaon ka naho Sof. tig bunot
+                                test123
                             </p>
                             <h3>Melchard Lina</h3>
                             <h4>Game Developer</h4>
@@ -404,7 +404,7 @@
                         </div>
                         <div class="testimonial-text">
                         <p>
-                                Tagpilag lubi Sof.
+                                test1234
                             </p>
                             <h3>Dexter Mano</h3>
                             <h4>Web Designer</h4>
@@ -451,7 +451,7 @@
                             </div>
                             <div class="team-text">
                                 <h2>Fred Fritz Agustin</h2>
-                                <h4>Back-End Developer</h4>
+                                <h4>Back-End Designer</h4>
                                 <p>
                                     A Great Back-End Designer.
                                 </p>
