@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\PortfolioController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\admin\TempImageController;
 use App\Http\Controllers\HomeBlogController;
+// use App\Http\Controllers\HomeBlogController;
 
 /*
 |--------------------------------------------------------------------------
