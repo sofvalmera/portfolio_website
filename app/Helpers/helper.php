@@ -1,6 +1,8 @@
 <?php 
 
 use App\Models\Blog;
+use App\Models\Profile;
+use App\Models\Social;
 
 function getBlogs(){
    return Blog::orderBy('title','ASC')
@@ -8,5 +10,16 @@ function getBlogs(){
     ->get();
 
 }
+
+function getProfiles(){
+    return Profile::orderBy('fullname','ASC')
+     ->get();
+ 
+ }
+ function getSocials(){
+    return Social::orderBy('id','ASC')
+     ->get();
+ 
+ }
 
 ?>

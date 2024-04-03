@@ -34,7 +34,7 @@
 									</div>
                                     <div class="col-md-6">
 										<div class="mb-3">
-											<label for="name">Name</label>
+											<label for="name">Author</label>
 											<input type="text" name="name" id="name" class="form-control" placeholder="Name">	
 											<p></p>
 										</div>
@@ -42,14 +42,14 @@
                                     <div class="col-md-6">
 										<div class="mb-3">
 											<label for="project">Project Name</label>
-											<input type="text" name="project" id="project" class="form-control" placeholder="Project">	
+											<input type="text" name="project" id="project" class="form-control" placeholder="Project Name">	
 											<p></p>
 										</div>
 									</div>
                                     <div class="col-md-6">
 										<div class="mb-3">
-											<label for="date">Date</label>
-											<input type="text" name="date" id="date" class="form-control" placeholder="Date">	
+											<label for="date">Published Date</label>
+											<input type="date" name="date" id="date" class="form-control" placeholder="Date">	
 											<p></p>
 										</div>
 									</div>

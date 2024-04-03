@@ -6,33 +6,42 @@
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
+                    @if (getProfiles()->isNotEmpty())
+                    @foreach (getProfiles() as $profile)
                         <div class="about-img">
+                        @if ($profile->image != "")
+                            <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
+                            @endif
                            
                             
-                            <img src="{{asset('front-assets/img/soo.jpg')}}" alt="Image">
+                            <!-- <img src="{{asset('front-assets/img/soo.jpg')}}" alt="Image"> -->
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="about-content">
                             <div class="section-header text-left">
                                 <p>About Me</p>
-                                <h2>3 Years Experience</h2>
+                                <!-- <h2>3 Years Experience</h2> -->
                             </div>
                             
                             <div class="about-text">
-                                <p> I'm <b>Sofronio Jr. L. Valmera</b>, a third-year BSIT student at MLG College of Learning, 
+                                <p> I'm <b>{{$profile->fullname}}</b>, a third-year BSIT student at MLG College of Learning, 
                                 with a passion for web development. I'm dedicated to mastering the art of web development, 
-                                fueled by curiosity, creativity, and a commitment to continuous learning.<br>
+                                fueled by curiosity, creativity, and a commitment to continuous learning.<br><br>
                                 
-                                <B>Birthday:</b> 1 December 2002 <br>
-                                <B>Phone:</b> 09263318591 <br>
-                                <B>Province:</b> Leyte, Hilongos 6524 <br>
-                                <B>Age:</b> 21 <br>
-                                <B>Degree:</b> College <br>
-                                <B>Email:</b> sofroniolvalmera@gmail.com  <br>
+                                <B>Birthday:</b>&nbsp&nbsp{{$profile->birthday}}  <br>
+                                <B>Phone:</b>&nbsp&nbsp +63{{$profile->phonenumber}} <br>
+                                <B>Brgy. Address:</b>&nbsp&nbsp{{$profile->barangay}} <br>
+                                <B>Municipality:</b>&nbsp&nbsp{{$profile->municipality}} <br>
+                                <B>Province:</b>&nbsp&nbsp{{$profile->province}} <br>
+                                <B>Age:</b> &nbsp&nbsp{{$profile->age}} <br>
+                                <B>Degree:</b> &nbsp&nbsp{{$profile->degree}} <br>
+                                <B>Email:</b>&nbsp&nbsp{{$profile->email}}  <br>
                                 </p>  
                                     
                             </div>
+                            @endforeach
+                            @endif
                             
                             <div class="skills">
                                 <div class="skill-name">

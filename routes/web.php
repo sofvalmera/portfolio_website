@@ -7,7 +7,9 @@ use App\Http\Controllers\admin\AdminLogInController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\PortfolioController;
+use App\Http\Controllers\admin\SocialController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\admin\TempImageController;
 use App\Http\Controllers\HomeBlogController;
@@ -53,15 +55,32 @@ Route::group(['prefix' => 'admin'],function(){
             //picture
             Route::post('/upload-temp-image',[TempImageController::class,'create'])->name('temp-images.create');
 
+
+            // profile route
+            Route::get('/profiles',[ProfileController::class,'index'])->name('profiles.index');
+            Route::get('/profiles/create',[ProfileController::class,'create'])->name('profiles.create');
+           Route::post('/profiles',[ProfileController::class,'store'])->name('profiles.store');
+           Route::get('/profiles/{profile}/edit',[ProfileController::class,'edit'])->name('profiles.edit');
+           Route::put('/profiles/{profile}',[ProfileController::class,'update'])->name('profiles.update');
+           Route::delete('/profiles/{profile}',[ProfileController::class,'destroy'])->name('profiles.delete');
+
             
             //blog route ni
             Route::get('/blogs',[BlogController::class,'index'])->name('blogs.index');
-             
             Route::get('/blogs/create',[BlogController::class,'create'])->name('blogs.create');
            Route::post('/blogs',[BlogController::class,'store'])->name('blogs.store');
            Route::get('/blogs/{blog}/edit',[BlogController::class,'edit'])->name('blogs.edit');
            Route::put('/blogs/{blog}',[BlogController::class,'update'])->name('blogs.update');
            Route::delete('/blogs/{blog}',[BlogController::class,'destroy'])->name('blogs.delete');
+
+             
+            //social media route ni
+            Route::get('/socials',[SocialController::class,'index'])->name('socials.index');
+            Route::get('/socials/create',[SocialController::class,'create'])->name('socials.create');
+           Route::post('/socials',[SocialController::class,'store'])->name('socials.store');
+           Route::get('/socials/{blog}/edit',[SocialController::class,'edit'])->name('socials.edit');
+           Route::put('/socials/{blog}',[SocialController::class,'update'])->name('socials.update');
+           Route::delete('/socials/{blog}',[SocialController::class,'destroy'])->name('socials.delete');
 
               //portfolio
               Route::get('/portfolio',[PortfolioController::class,'index'])->name('portfolio.index');

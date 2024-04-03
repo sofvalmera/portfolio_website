@@ -41,7 +41,7 @@ class BlogController extends Controller
         ]);
         
         if($validator->passes()){
-            $blog=new BLog();
+            $blog=new Blog();
             $blog->title = $request->title;
             $blog->name = $request->name;
             $blog->project = $request->project;

@@ -18,7 +18,7 @@
 								</a>																
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="{{route('profiles.index')}}" class="nav-link">
 									<i class="nav-icon fas fa-user-alt"></i>
 									<p>Profile</p>
 								</a>
@@ -27,6 +27,12 @@
 								<a href="{{route('blogs.index')}}" class="nav-link">
 									<i class="nav-icon fas fa-blog"></i>
 									<p>Blog</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">
+									<i class="nav-icon fas fa-envelope-open"></i>
+									<p>Skill</p>
 								</a>
 							</li>
 							<li class="nav-item">
@@ -57,7 +63,12 @@
 									<p>Contact</p>
 								</a>
 							</li>
-						
+							<li class="nav-item">
+								<a href="{{route('socials.index')}}" class="nav-link">
+									<i class="nav-icon fas fa-share-alt"></i>
+									<p>Social Media Icon</p>
+								</a>
+							</li>
 							
 							<li class="nav-item">
 								<a href="#" class="nav-link">

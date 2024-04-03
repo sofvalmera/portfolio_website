@@ -62,15 +62,14 @@
                     <div class="navbar-nav ml-auto">
                         <a href="#home" class="nav-item nav-link active">Home</a>
                         <a href="#about" class="nav-item nav-link">About</a>
+                        <!-- <a href="#skill" class="nav-item nav-link">Skill</a> -->
                         <a href="#blog" class="nav-item nav-link">Blog</a>
                         <a href="#service" class="nav-item nav-link">Service</a>
-                        
                         <a href="#experience" class="nav-item nav-link">Resume</a>
                         <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
                         <!-- <a href="#price" class="nav-item nav-link">Price</a> -->
                         <a href="#review" class="nav-item nav-link">Review</a>
                         <a href="#team" class="nav-item nav-link">Team</a>
-                        
                         <a href="#contact" class="nav-item nav-link">Contact</a>
                         <a href="#" class="nav-item nav-link" id="login-link">Login</a>
                         <a href="{{route('account.register')}}" class="nav-item nav-link" id="signup-link">Signup</a>
@@ -120,18 +119,21 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                        <h2>Sofronio Jr. L. Valmera</h2>
-                        <h3>Proteccion,Hilongos,Leyte 6524</h3>
+                        <h2>{{$profile->fullname}}</h2>
+                        <h3>{{$profile->barangay}},{{$profile->municipality}},{{$profile->province}} {{$profile->zipcode}}</h3>
                         <div class="footer-menu">
-                            <p>+639123445555</p>
-                            <p>sofroniolvalmera@gmail.com</p>
+                            <p>+63{{$profile->phonenumber}}</p>
+                            <p>{{$profile->email}}</p>
                         </div>
                         <div class="footer-social">
-                            <a href="https://www.youtube.com/@hahaaaaaa321"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=100072440629870"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.linkedin.com/in/sofronio-l-valmera-6b7391262/"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.instagram.com/seess_ssh/"><i class="fab fa-instagram"></i></a>
-                            
+                        @if (getSocials()->isNotEmpty())
+                        @foreach (getSocials() as $social)
+                            <a href="{{$social->yt}}"><i class="fab fa-youtube"></i></a>
+                            <a href="{{$social->fb}}"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{$social->li}}"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="{{$social->ig}}"><i class="fab fa-instagram"></i></a>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
