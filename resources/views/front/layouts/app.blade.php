@@ -119,11 +119,15 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
+                         @if (getProfiles()->isNotEmpty())
+                        @foreach (getProfiles() as $profile)
                         <h2>{{$profile->fullname}}</h2>
                         <h3>{{$profile->barangay}},{{$profile->municipality}},{{$profile->province}} {{$profile->zipcode}}</h3>
                         <div class="footer-menu">
                             <p>+63{{$profile->phonenumber}}</p>
-                            <p>{{$profile->email}}</p>
+                            <p>{{Auth::guard('admin')->user()->email}}</p>
+                            @endforeach
+                            @endif
                         </div>
                         <div class="footer-social">
                         @if (getSocials()->isNotEmpty())

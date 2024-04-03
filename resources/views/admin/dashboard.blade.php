@@ -54,7 +54,7 @@
 									<div class="icon">
 										<i class="ion ion-person-add"></i>
 									</div>
-									<a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
+									<a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 						</div>

@@ -31,12 +31,10 @@
                                 
                                 <B>Birthday:</b>&nbsp&nbsp{{$profile->birthday}}  <br>
                                 <B>Phone:</b>&nbsp&nbsp +63{{$profile->phonenumber}} <br>
-                                <B>Brgy. Address:</b>&nbsp&nbsp{{$profile->barangay}} <br>
-                                <B>Municipality:</b>&nbsp&nbsp{{$profile->municipality}} <br>
-                                <B>Province:</b>&nbsp&nbsp{{$profile->province}} <br>
+                                <B>Address:</b>&nbsp&nbspBrgy.&nbsp{{$profile->barangay}}&nbsp{{$profile->municipality}},{{$profile->province}}&nbsp{{$profile->zipcode}} <br>
                                 <B>Age:</b> &nbsp&nbsp{{$profile->age}} <br>
                                 <B>Degree:</b> &nbsp&nbsp{{$profile->degree}} <br>
-                                <B>Email:</b>&nbsp&nbsp{{$profile->email}}  <br>
+                                <B>Email:</b>&nbsp&nbsp{{Auth::guard('admin')->user()->email}}  <br>
                                 </p>  
                                     
                             </div>
