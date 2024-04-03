@@ -248,7 +248,7 @@ a:focus {
     margin-bottom: 45px;
     padding: 120px 0 0 0;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 135, 247,.90), rgba(0, 135, 247,.90)), url(../img/hero-bg.jpg);
+    background: linear-gradient(rgba(0, 135, 247,.96), rgba(0, 135, 247,.96)), url(../img/bg.jfif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1310,6 +1310,7 @@ a:focus {
 }
 
 .contact .container-fluid {
+    /* background: url(../img/sof.png) left center no-repeat; */
     background: url(../img/soo.jpg) left center no-repeat;
     background-size: contain;
 }

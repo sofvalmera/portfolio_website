@@ -8,6 +8,7 @@
                     <div class="col-lg-6">
                         <div class="about-img">
                            
+                            
                             <img src="{{asset('front-assets/img/soo.jpg')}}" alt="Image">
                         </div>
                     </div>
@@ -23,13 +24,13 @@
                                 with a passion for web development. I'm dedicated to mastering the art of web development, 
                                 fueled by curiosity, creativity, and a commitment to continuous learning.<br>
                                 
-                                <!-- <B>Birthday:</b> 1 December 2002 <br>
+                                <B>Birthday:</b> 1 December 2002 <br>
                                 <B>Phone:</b> 09263318591 <br>
                                 <B>Province:</b> Leyte, Hilongos 6524 <br>
                                 <B>Age:</b> 21 <br>
                                 <B>Degree:</b> College <br>
                                 <B>Email:</b> sofroniolvalmera@gmail.com  <br>
-                                </p>   -->
+                                </p>  
                                     
                             </div>
                             
@@ -66,6 +67,48 @@
             </div>
         </div>
         <!-- About End -->
+
+         <!-- Blog Start -->
+         <div class="blog" id="blog">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>Blog</p>
+                    <!-- <h2>Latest Articles</h2> -->
+                </div>
+                <div class="row">
+                @if (getBlogs()->isNotEmpty())
+                    @foreach (getBlogs() as $blog)
+               
+                    <div class="col-lg-6">
+                        <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="blog-img">
+                            @if ($blog->image != "")
+                            <img width="20" height="20" src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="" class="img-fluid">
+                            @endif
+                               
+                            </div>
+                            <div class="blog-text">
+                                <h2>{{$blog->title}}</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>{{$blog->name}}</p>
+                                    <p><i class="far fa-list-alt"></i>{{$blog->project}}</p>
+                                    <p><i class="far fa-calendar-alt"></i>{{$blog->date}}</p>
+                                    <!-- <p><i class="far fa-heart"></i>10</p> -->
+                                </div>
+                                <p>
+                                {{$blog->description}}
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
         
         
         <!-- Service Start -->
@@ -392,7 +435,7 @@
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                test123
+                                Kuhaon ka naho sof. tigbunot
                             </p>
                             <h3>Melchard Lina</h3>
                             <h4>Game Developer</h4>
@@ -404,7 +447,7 @@
                         </div>
                         <div class="testimonial-text">
                         <p>
-                                test1234
+                                tagpila lubi sof.
                             </p>
                             <h3>Dexter Mano</h3>
                             <h4>Web Designer</h4>
@@ -455,136 +498,17 @@
                                 <p>
                                     A Great Back-End Designer.
                                 </p>
-                                <!-- <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div> -->
+                               
                            </div>
                         </div>
                     </div>
-                     <!-- 
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Jennifer Page</h2>
-                                <h4>Apps Designer</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Josh Dunn</h2>
-                                <h4>Apps Developer</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                   
                 </div>
             </div>
         </div>
         <!-- Team End -->
 
-        <!-- Blog Start -->
-        <div class="blog" id="blog">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Blog</p>
-                    <!-- <h2>Latest Articles</h2> -->
-                </div>
-                <div class="row">
-                    <!-- <div class="col-lg-6">
-                        <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="blog-img">
-                                <img src="img/blog-1.jpg" alt="Blog">
-                            </div>
-                            <div class="blog-text">
-                                <h2>Lorem ipsum dolor sit amet</h2>
-                                <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>Admin</p>
-                                    <p><i class="far fa-list-alt"></i>Web Design</p>
-                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                    <p><i class="far fa-comments"></i>5</p>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi. Nullam eu erat lectus. Proin viverra risus vitae luctus. Proin ut ante, vitae sapien. Fusce sem ac erat rhoncus, ornare mattis nisl massa et eros vitae pulvin
-                                </p>
-                                <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="col-lg-6">
-                        <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="blog-img">
-                                <img src="{{asset('front-assets/img/myblog.png')}}" alt="Blog">
-                            </div>
-                            <div class="blog-text">
-                                <h2>Portfolio Website</h2>
-                                <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>Sofronio Jr. L. Valmera</p>
-                                    <p><i class="far fa-list-alt"></i>Web Develop</p>
-                                    <p><i class="far fa-calendar-alt"></i>29-March-2024</p>
-                                    <p><i class="far fa-heart"></i>10</p>
-                                </div>
-                                <p>
-                                Embark on my web development journey through my meticulously crafted online portfolio. With modern de
-                                sign and intuitive user experience, I showcase my projects while sharing insights and connecting with like-minded developers. Join me
-                                 in exploring creativity, innovation, and collaboration in the digital realm.
-                                </p>
-                                <!-- <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="blog-img">
-                                <img src="{{asset('front-assets/img/sales.png')}}" alt="Blog">
-                            </div>
-                            <div class="blog-text">
-                                <h2>Sales System</h2>
-                                <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>Sofronio Jr. L. Valmera</p>
-                                    <p><i class="far fa-list-alt"></i>Web Develop</p>
-                                    <p><i class="far fa-calendar-alt"></i>29-January-2024</p>
-                                    <p><i class="far fa-heart"></i>10</p>
-                                </div>
-                                <p>
-                                Embark on a captivating journey through my blog as I unveil the intricacies of my meticulously crafted Sales System. With its sleek design and user-friendly interface, I showcase the seamless shopping experience my platform offers. Join me in exploring the world of online retail, where innovation and customer satisfaction converge to redefine the future of commerce.
-                                </p>
-                                <!-- <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog End -->
-
+       
         
         
         <!-- Contact Start -->

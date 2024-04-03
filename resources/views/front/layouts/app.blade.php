@@ -62,16 +62,18 @@
                     <div class="navbar-nav ml-auto">
                         <a href="#home" class="nav-item nav-link active">Home</a>
                         <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#blog" class="nav-item nav-link">Blog</a>
                         <a href="#service" class="nav-item nav-link">Service</a>
+                        
                         <a href="#experience" class="nav-item nav-link">Resume</a>
                         <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
                         <!-- <a href="#price" class="nav-item nav-link">Price</a> -->
                         <a href="#review" class="nav-item nav-link">Review</a>
                         <a href="#team" class="nav-item nav-link">Team</a>
-                        <a href="#blog" class="nav-item nav-link">Blog</a>
+                        
                         <a href="#contact" class="nav-item nav-link">Contact</a>
                         <a href="#" class="nav-item nav-link" id="login-link">Login</a>
-                        <a href="#" class="nav-item nav-link" id="signup-link">Signup</a>
+                        <a href="{{route('account.register')}}" class="nav-item nav-link" id="signup-link">Signup</a>
                     </div>
                 </div>
             </div>
