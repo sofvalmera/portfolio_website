@@ -167,12 +167,12 @@
 											<p></p>
 										</div>
 									</div>
-									<!-- <div class="col-md-6">
+									<div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="description">Description</label>
                                                     <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$profile->description}}</textarea>
                                                 </div>
-                                            </div>       -->
+                                            </div>      
 
 																			
 								</div>

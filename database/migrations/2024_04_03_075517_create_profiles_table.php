@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('textlogo');
             $table->string('fullname',255);
             $table->string('role');
-            // $table->string('description',255)->nullable();
+            $table->string('description',700)->nullable();
             $table->integer('age');
             $table->string('degree');
             $table->string('birthday');

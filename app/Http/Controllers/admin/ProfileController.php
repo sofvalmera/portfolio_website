@@ -35,13 +35,13 @@ class ProfileController extends Controller
      public function store(Request $request){
         $validator =Validator::make($request->all(),[
 
-            'textlogo' => 'required|numeric|max:5|min:2',
+            'textlogo' => 'required|max:5|min:2',
             'role'  => 'required',
             'fullname' => 'required',
             'age' => 'required|numeric',
             'degree' => 'required',
             'birthday' => 'required',
-            'phonenumber' => 'required|numeric',
+           'phonenumber' => 'required|numeric',
             'email' => 'required',
             'barangay' => 'required',
             'province' => 'required',
@@ -55,7 +55,7 @@ class ProfileController extends Controller
             $profile=new Profile();
             $profile->textlogo = $request->textlogo;
             $profile->role = $request->role;
-            // $profile->description = $request->description;
+            $profile->description = $request->description;
             $profile->fullname = $request->fullname;
             $profile->age = $request->age;
             $profile->degree = $request->degree;
@@ -135,7 +135,7 @@ class ProfileController extends Controller
             ]);
         }
         $validator =Validator::make($request->all(),[
-            'textlogo' => 'required|numeric|max:5|min:2',
+            'textlogo' => 'required|max:5|min:2',
             'role'  => 'required',
             'fullname' => 'required',
             'age' => 'required|numeric',
@@ -154,7 +154,7 @@ class ProfileController extends Controller
         if($validator->passes()){
             $profile->role = $request->role;
             $profile->textlogo = $request->textlogo;
-            // $profile->description = $request->description;
+            $profile->description = $request->description;
             $profile->fullname = $request->fullname;
             $profile->age = $request->age;
             $profile->degree = $request->degree;

@@ -2,11 +2,13 @@
 				<!-- Brand Logo -->
 				<a href="#" class="brand-link">
 					<!-- <img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-					<span class="brand-text font-weight-light">  @if (getProfiles()->isNotEmpty())
+					<span class="brand-text font-weight-light"><CENTER>  @if (getProfiles()->isNotEmpty())
                         @foreach (getProfiles() as $profile) 
                         {{$profile->textlogo}}  
                          @endforeach
-                            @endif</span>
+                            @endif
+						</CENTER>
+						</span>
 				</a>
 				<!-- Sidebar -->
 				<div class="sidebar">
