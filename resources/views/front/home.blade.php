@@ -11,7 +11,7 @@
                         <div class="about-img">
                         @if ($profile->image != "")
                             <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
-                            
+                            @endif
                            
                            
                             
@@ -27,8 +27,7 @@
                             </div>
                             
                             <div class="about-text">
-                            @if (getProfiles()->isNotEmpty())
-                          @foreach (getProfiles() as $profile)
+                           
                                 <p> I'm <b>{{$profile->fullname}}</b>, a third-year BSIT student at MLG College of Learning, 
                                 with a passion for web development. I'm dedicated to mastering the art of web development, 
                                 fueled by curiosity, creativity, and a commitment to continuous learning.<br><br>
@@ -73,7 +72,7 @@
                             </div>
                             @endforeach
                             @endif
-                            @endif
+                           
                             <!-- <a class="btn" href="#service">Read More</a> -->
                         </div>
                     </div>
