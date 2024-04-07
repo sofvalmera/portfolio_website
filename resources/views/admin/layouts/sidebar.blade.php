@@ -2,7 +2,11 @@
 				<!-- Brand Logo -->
 				<a href="#" class="brand-link">
 					<!-- <img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-					<span class="brand-text font-weight-light">SJLV</span>
+					<span class="brand-text font-weight-light">  @if (getProfiles()->isNotEmpty())
+                        @foreach (getProfiles() as $profile) 
+                        {{$profile->textlogo}}  
+                         @endforeach
+                            @endif</span>
 				</a>
 				<!-- Sidebar -->
 				<div class="sidebar">
@@ -29,12 +33,18 @@
 									<p>Blog</p>
 								</a>
 							</li>
+							<li class="nav-item">
+								<a href="{{route('services.index')}}" class="nav-link">
+									<i class="nav-icon fas fa-laptop-code"></i>
+									<p>Service</p>
+								</a>
+							</li>
 						
 
 
-							
+
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="{{route('skills.index')}}" class="nav-link">
 									<i class="nav-icon fas fa-envelope-open"></i>
 									<p>Skill</p>
 								</a>
@@ -68,9 +78,9 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="{{route('contacts.index')}}" class="nav-link">
 									<i class="nav-icon fa fa-address-book"></i>
-									<p>Contact</p>
+									<p>Contacts</p>
 								</a>
 							</li>
 							<li class="nav-item">
@@ -81,7 +91,7 @@
 							</li>
 							
 							<li class="nav-item">
-								<a href="{{route('users.index')}}" class="nav-link">
+								<a href="#" class="nav-link">
 									<i class="nav-icon  fas fa-users"></i>
 									<p>Users</p>
 								</a>

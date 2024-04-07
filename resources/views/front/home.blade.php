@@ -48,16 +48,19 @@
                             
                                     
                             </div>
-                           
-                            
+                            @if (getSkills()->isNotEmpty())
+                          @foreach (getSkills() as $skill)
+                            <div class="about-text">
+                          
                             <div class="skills">
                                 <div class="skill-name">
-                                    <p>PHP</p><p>42%</p>
+                                    <p>{{$skill->skillname}}</p><p>{{$skill->rate}}%</p>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{$skill->rate}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                <div class="skill-name">
+
+                                <!-- <div class="skill-name">
                                     <p>HTML</p><p>40%</p>
                                 </div>
                                 <div class="progress">
@@ -75,12 +78,16 @@
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                            </div>
-                            @endforeach
-                            @endif
+                            </div> -->
+                           
                             <!-- <a class="btn" href="#service">Read More</a> -->
                         </div>
                     </div>
+                    @endforeach
+                            @endif
+                    
+                    @endforeach
+                            @endif
                 </div>
             </div>
         </div>
@@ -139,18 +146,26 @@
                 <div class="row">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="service-item">
+                        @if (getServices()->isNotEmpty())
+                    @foreach (getServices() as $service)
                             <div class="service-icon">
-                                <i class="fa fa-laptop"></i>
+                          
+
+                                <i class=" {{$service->icon}}"></i>
+                                <!-- <i class="fa fa-laptop"></i> -->
                             </div>
                             <div class="service-text">
-                                <h3>Web Design</h3>
+                          
+                                <h3> {{$service->servicename}}</h3>
                                 <p>
-                                I am devoted to creating visually stunning and user-friendly websites.
+                                {{$service->description}}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                    @endforeach
+                    @endif
+                    <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="service-item">
                             <div class="service-icon">
                                 <i class="fa fa-laptop-code"></i>
@@ -188,7 +203,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -449,8 +464,12 @@
                     <div class="row align-items-center">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
+                     
                             <div class="contact-form">
                                 <div id="success"></div>
+                                @if (getContacts()->isNotEmpty())
+                        @foreach (getContacts() as $contact)
+                                
                                 <form name="sentMessage" id="contactForm" novalidate="novalidate">
                                     <div class="control-group">
                                         <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
@@ -472,6 +491,8 @@
                                         <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
                                     </div>
                                 </form>
+                                @endforeach
+                            @endif
                             </div>
                         </div>
                     </div>

@@ -48,12 +48,20 @@
 						<a class="nav-link p-0 pr-3" data-toggle="dropdown" href="">
 						@if (getProfiles()->isNotEmpty())
                     @foreach (getProfiles() as $profile)
-						
+					
+                            <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
+                           
+							@if ($profile->image != "")
 							<img src="{{asset('uploads/profile/thumb/'.$profile->image)}}" class='img-circle elevation-2' width="40" height="40" alt="">
 							
-						</a>
-						@endforeach
+							@endif
+
+							@endforeach
+							@else
+							<img  src="{{asset('uploads/profile/nopic/ggg.jpg')}}" class='img-circle elevation-2' width="40" height="40" alt="">
                             @endif
+						</a>
+						
                             
 
 
@@ -61,9 +69,10 @@
 							<h4 class="h4 mb-0"><strong>{{Auth::guard('admin')->user()->name}}</strong></h4>
 							<div class="mb-3">{{Auth::guard('admin')->user()->email}}</div>
 							<div class="dropdown-divider"></div>
-							<!-- <a href="#" class="dropdown-item">
-								<i class="fas fa-user-cog mr-2"></i> Settings								
-							</a> -->
+							<a href="{{route('profiles.index')}}" class="dropdown-item">
+								<i class="fas fa-user-alt"></i> Profile	
+								<!-- fas fa-user-cog mr-2							 -->
+							</a>
 							<div class="dropdown-divider"></div>
 							<a href="{{route('admin.showChangePasswordForm')}}" class="dropdown-item">
 								<i class="fas fa-lock mr-2"></i> Change Password

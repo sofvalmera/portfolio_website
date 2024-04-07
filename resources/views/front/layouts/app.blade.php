@@ -53,7 +53,12 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-light navbar-light">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">SJLV</a>
+                <a href="#" class="navbar-brand"> 
+                        @if (getProfiles()->isNotEmpty())
+                        @foreach (getProfiles() as $profile) 
+                        {{$profile->textlogo}}  
+                         @endforeach
+                            @endif</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -148,7 +153,15 @@
                     </div>
                 </div>
                 <div class="container copyright">
-                    <p>&copy; <a href="#">SJLV</a>, All Right Reserved | Designed By <a href="#">SJLV</a></p>
+                    <p>&copy; <a href="#">  @if (getProfiles()->isNotEmpty())
+                        @foreach (getProfiles() as $profile) 
+                        {{$profile->textlogo}}  
+                         @endforeach
+                            @endif</a>, All Right Reserved | Designed By <a href="#">  @if (getProfiles()->isNotEmpty())
+                        @foreach (getProfiles() as $profile) 
+                        {{$profile->textlogo}}  
+                         @endforeach
+                            @endif</a></p>
                 </div>
             </div>
         </div>

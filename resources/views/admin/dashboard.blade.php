@@ -47,7 +47,7 @@
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
 									<div class="inner">
-										<h3>0</h3>
+										<h3>{{$countb}}</h3>
 										<p>Blog</p>
 									</div>
 									<div class="icon">
@@ -59,7 +59,7 @@
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
 									<div class="inner">
-										<h3>2</h3>
+										<h3>{{$countm}}</h3>
 										<p>Team Members</p>
 									</div>
 									<div class="icon">
@@ -71,14 +71,14 @@
 							
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
-									<div class="inner">
-										<h3>6</h3>
+									<div class="inner ">
+										<h3>{{$countp}}</h3>
 										<p>Projects</p>
 									</div>
 									<div class="icon">
 										<i class="ion ion-person-add"></i>
 									</div>
-									<a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+									<a href="{{route('portfolios.index')}}" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 						</div>

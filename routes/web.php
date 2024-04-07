@@ -13,6 +13,8 @@ use App\Http\Controllers\admin\SocialController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\MemberController;
+use App\Http\Controllers\admin\ServiceController;
+use App\Http\Controllers\admin\SkillController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\admin\TempImageController;
 // use App\Http\Controllers\HomeBlogController;
@@ -78,6 +80,15 @@ Route::group(['prefix' => 'admin'],function(){
            Route::put('/profiles/{profile}',[ProfileController::class,'update'])->name('profiles.update');
            Route::delete('/profiles/{profile}',[ProfileController::class,'destroy'])->name('profiles.delete');
 
+              // Contact route
+              Route::get('/contacts',[ContactController::class,'index'])->name('contacts.index');
+              Route::get('/contacts/create',[ContactController::class,'create'])->name('contacts.create');
+             Route::post('/contacts',[ContactController::class,'store'])->name('contacts.store');
+             Route::get('/contacts/{contact}/edit',[ContactController::class,'edit'])->name('contacts.edit');
+             Route::put('/contacts/{contact}',[ContactController::class,'update'])->name('contacts.update');
+             Route::delete('/contacts/{contact}',[ContactController::class,'destroy'])->name('contacts.delete');
+  
+
             
             //blog route ni
             Route::get('/blogs',[BlogController::class,'index'])->name('blogs.index');
@@ -86,6 +97,15 @@ Route::group(['prefix' => 'admin'],function(){
            Route::get('/blogs/{blog}/edit',[BlogController::class,'edit'])->name('blogs.edit');
            Route::put('/blogs/{blog}',[BlogController::class,'update'])->name('blogs.update');
            Route::delete('/blogs/{blog}',[BlogController::class,'destroy'])->name('blogs.delete');
+
+           
+              //skill
+              Route::get('/skills',[SkillController::class,'index'])->name('skills.index');
+              Route::get('/skills/create',[SkillController::class,'create'])->name('skills.create');
+             Route::post('/skills',[SkillController::class,'store'])->name('skills.store');
+             Route::get('/skills/{skill}/edit',[SkillController::class,'edit'])->name('skills.edit');
+             Route::put('/skills/{skill}',[SkillController::class,'update'])->name('skills.update');
+             Route::delete('/skills/{skill}',[SkillController::class,'destroy'])->name('skills.delete');
 
            //member route ni
            Route::get('/members',[MemberController::class,'index'])->name('members.index');
@@ -103,6 +123,15 @@ Route::group(['prefix' => 'admin'],function(){
            Route::put('/socials/{blog}',[SocialController::class,'update'])->name('socials.update');
            Route::delete('/socials/{blog}',[SocialController::class,'destroy'])->name('socials.delete');
 
+             //service route ni
+             Route::get('/services',[ServiceController::class,'index'])->name('services.index');
+             Route::get('/services/create',[ServiceController::class,'create'])->name('services.create');
+             Route::post('/services',[ServiceController::class,'store'])->name('services.store');
+             Route::get('/services/{service}/edit',[ServiceController::class,'edit'])->name('services.edit');
+             Route::put('/services/{service}',[ServiceController::class,'update'])->name('services.update');
+             Route::delete('/services/{service}',[ServiceController::class,'destroy'])->name('services.delete');
+  
+
               //portfolio
             Route::get('/portfolios',[PortfolioController::class,'index'])->name('portfolios.index');
             Route::get('/portfolios/create',[PortfolioController::class,'create'])->name('portfolios.create');
@@ -112,9 +141,6 @@ Route::group(['prefix' => 'admin'],function(){
            Route::delete('/portfolios/{portfolio}',[PortfolioController::class,'destroy'])->name('portfolios.delete');
 
             
-              //contact
-              Route::get('/contact',[ContactController::class,'index'])->name('contacts.index');
-
               
               //user
               Route::get('/user',[UserController::class,'index'])->name('users.index');

@@ -41,7 +41,15 @@
 									</div>
                                 </center>
                                
-
+									
+								<div class="col-md-6">
+										<div class="mb-3">
+                                        <br><br><br><br>
+											<label for="textlogo">Text Logo</label>
+											<input type="text" name="textlogo" id="textlogo" class="form-control" placeholder="All Uppercase Characters">	
+											<p></p>
+										</div>
+									</div>
 
 									<div class="col-md-6">
 										<div class="mb-3">
@@ -215,6 +223,11 @@
 
 					window.location.href="{{route('profiles.index')}}";
 					
+					$("#textlogo").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+					
 					$("#role").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
@@ -289,6 +302,17 @@
                         }
 
 					var errors = response['errors'];
+					if(errors['textlogo']){
+					$("#textlogo").addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html(errors['textlogo']);
+				} else{
+					$("#textlogo").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+				}
+			
 					if(errors['role']){
 					$("#role").addClass('is-invalid')
 					.siblings('p')

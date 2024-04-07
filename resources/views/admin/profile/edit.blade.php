@@ -35,12 +35,19 @@
 											    </div>
 										    </div>
 										</div>
-                                        @if(!empty($blog->image))
+                                        @if(!empty($profile->image))
                                         <div>
-                                            <img width="250" height="250"  src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="">
+                                            <img width="250" height="250"  src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="">
                                         </div>
                                         @endif
 									</div>	
+									<div class="col-md-6">
+										<div class="mb-3">
+											<label for="textlogo"> Text Logo</label>
+											<input type="text" name="textlogo" id="textlogo" class="form-control" placeholder="All Uppercase Letters" value="{{$profile->textlogo}}">	
+											<p></p>
+										</div>
+									</div>
                                 <div class="col-md-6">
 										<div class="mb-3">
 											<label for="fullname">Full Name</label>
@@ -199,6 +206,20 @@
 				if(response["status"] == true){
 
 					window.location.href="{{route('profiles.index')}}";
+					if(errors['textlogo']){
+					$("#textlogo").addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html(errors['textlogo']);
+				} else{
+					$("#textlogo").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+				}
+					$("#textlogo").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
 					$("#role").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
