@@ -11,9 +11,8 @@
                         <div class="about-img">
                         @if ($profile->image != "")
                             <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
-                            @endif
-                            @endforeach
-                            @endif
+                            
+                           
                            
                             
                             <!-- <img src="{{asset('front-assets/img/soo.jpg')}}" alt="Image"> -->
@@ -73,6 +72,7 @@
                                 </div>
                             </div>
                             @endforeach
+                            @endif
                             @endif
                             <!-- <a class="btn" href="#service">Read More</a> -->
                         </div>
