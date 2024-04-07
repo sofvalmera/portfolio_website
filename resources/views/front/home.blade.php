@@ -31,9 +31,7 @@
                             <div class="about-text">
                             @if (getProfiles()->isNotEmpty())
                           @foreach (getProfiles() as $profile)
-                                <p> I'm <b>{{$profile->fullname}}</b>, a third-year BSIT student at MLG College of Learning, 
-                                with a passion for web development. I'm dedicated to mastering the art of web development, 
-                                fueled by curiosity, creativity, and a commitment to continuous learning. <br><br>
+                                <p> I'm <b>{{$profile->fullname}}</b>, {{$profile->description}}  <br><br>
                                 <!-- a third-year BSIT student at MLG College of Learning, 
                                 with a passion for web development. I'm dedicated to mastering the art of web development, 
                                 fueled by curiosity, creativity, and a commitment to continuous learning. -->
