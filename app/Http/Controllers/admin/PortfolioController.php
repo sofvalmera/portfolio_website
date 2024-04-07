@@ -20,7 +20,7 @@ class PortfolioController extends Controller
          $portfolios= Portfolio::latest();
          if(!empty($request->get('keyword'))){
 
-            $portfolios= $portfolios->where('name','like','%'.$request->get('keyword').'%');
+            $portfolios= $portfolios->where('projectname','like','%'.$request->get('keyword').'%');
          }
 
 
@@ -34,7 +34,6 @@ class PortfolioController extends Controller
     }
      public function store(Request $request){
         $validator =Validator::make($request->all(),[
-            'category' => 'required',
             'projectname' => 'required',
             'projectlink' => 'required',
 
@@ -43,10 +42,8 @@ class PortfolioController extends Controller
         
         if($validator->passes()){
             $portfolio=new Portfolio();
-            $portfolio->category = $request->category;
             $portfolio->projectname = $request->projectname;
             $portfolio->projectlink = $request->projectlink;
-            $portfolio->description = $request->description;
             $portfolio->save();
 
             //imageni
@@ -104,26 +101,25 @@ class PortfolioController extends Controller
         $portfolio=Portfolio::find($portfolioId);
 
         if(empty($portfolio)){
-            $request->session()->flash('error','Member not Found');
+            $request->session()->flash('error',' not Found');
             return response()->json([
                 'status' => false,
                 'notFound' => true,
-                'message' => 'Member not found'
+                'message' => ' not found'
             ]);
         }
         $validator =Validator::make($request->all(),[
-            'name' => 'required',
-            'role' => 'required',
+            'projectname' => 'required',
+            'projectlink' => 'required',
             
         ]);
         
         if($validator->passes()){
-            $member->name = $request->name;
-            $member->role = $request->role;
-            $member->description = $request->description;
-            $member->save();
+            $portfolio->projectname = $request->projectname;
+            $portfolio->projectlink = $request->projectlink;
+            $portfolio->save();
 
-            $oldImage = $member->image ;
+            $oldImage = $portfolio->image ;
             // =$newImageName;
             // $category->save();
 
@@ -135,13 +131,13 @@ class PortfolioController extends Controller
                 $extArray =explode('.',$tempImage->name);
                 $ext = last($extArray);
 
-                $newImageName = $blog->id.'-'.time().'.'.$ext;
+                $newImageName = $portfolio->id.'-'.time().'.'.$ext;
                 $sPath= public_path().'/temp/'.$tempImage->name;
-                $dPath= public_path().'/uploads/member/'.$newImageName;
+                $dPath= public_path().'/uploads/portfolio/'.$newImageName;
                 File::copy($sPath,$dPath);
 
                 //thumb
-                $dPath=public_path().'/uploads/member/thumb/'.$newImageName;
+                $dPath=public_path().'/uploads/portfolio/thumb/'.$newImageName;
                 $img = Image::make($sPath);
                 // $img->resize(450,600);
                 $img->fit(450, 300, function ($constraint) {
@@ -149,19 +145,19 @@ class PortfolioController extends Controller
                 });
                 $img->save($dPath);
 
-                $member->image = $newImageName;
-                $member->save();
+                $portfolio->image = $newImageName;
+                $portfolio->save();
 
                 //delete sa old pic
-                File::delete(public_path().'/uploads/member/thumb/'.$oldImage);
-                File::delete(public_path().'/uploads/member/'.$oldImage);
+                File::delete(public_path().'/uploads/portfolio/thumb/'.$oldImage);
+                File::delete(public_path().'/uploads/portfolio/'.$oldImage);
             }
 
 
-            $request->session()->flash('success','Member Updated Successfully');
+            $request->session()->flash('success','Updated Successfully');
             return response()->json([
                 'status' => true,
-                'message' => 'Member Updated Successfully'
+                'message' => ' Updated Successfully'
             ]);
      
         }else{
@@ -173,27 +169,27 @@ class PortfolioController extends Controller
 
     }
      public function destroy($portfolioId, Request $request){
-        $member=Member::find($portfolioId);
+        $portfolio=Portfolio::find($portfolioId);
 
-        if(empty($member)){
-            $request->session()->flash('error','Member not found');
+        if(empty($portfolio)){
+            $request->session()->flash('error',' not found');
             return response()->json([
                 'status' => true,
-                'message' => 'Member not found'
+                'message' => ' not found'
             ]);
     
             // return redirect()->route('categories.index');
         }
 
 
-        File::delete(public_path().'/uploads/member/thumb/'.$member->image);
-        File::delete(public_path().'/uploads/member/'.$member->image);
+        File::delete(public_path().'/uploads/portfolio/thumb/'.$portfolio->image);
+        File::delete(public_path().'/uploads/portfolio/'.$portfolio->image);
 
-        $member->delete();
-        $request->session()->flash('success','Member deleted successfully');
+        $portfolio->delete();
+        $request->session()->flash('success','deleted successfully');
         return response()->json([
             'status' => true,
-            'message' => 'Member Deleted Successfully'
+            'message' => ' Deleted Successfully'
         ]);
 
     }

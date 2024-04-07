@@ -45,8 +45,8 @@
 								<table class="table table-hover text-nowrap">
 									<thead>
 										<tr>
-											<!-- <th width="60">ID</th> -->
-											<th>Category</th>
+											<th width="60">ID</th>
+											
 											<th>Project Name</th>
 											<th>Project Link</th>
 											<!-- <th>Description</th> -->
@@ -58,9 +58,9 @@
 									</thead>
 									<tbody>
 										@if($portfolios->isNotEmpty())
-										@foreach($porfolios as $portfolio)
+										@foreach($portfolios as $portfolio)
 										<tr>
-											<td>{{$portfolio->category}}</td>
+										<td>{{$portfolio->id}}</td>
 											<td>{{$portfolio->projectname}}</td>
 											<td>{{$portfolio->projectlink}}</td>
 											

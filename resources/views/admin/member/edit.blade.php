@@ -21,7 +21,9 @@
 					<div class="container-fluid">
 						<form action="{{route('members.store')}}" method="get" id="editmemberForm" name="editmemberForm" >
 						@csrf
-						
+						<div class="card">
+							<div class="card-body">								
+								<div class="row">
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="name">Full Name</label>
@@ -45,7 +47,7 @@
 									
 		
 									
-									</div>
+									
 									<div class="col-md-6">
 										<div class="mb-3">
 											<input type="hidden" id="image_id" name="image_id" value="">
@@ -63,8 +65,6 @@
                                         @endif
 									</div>	
 									
-
-																			
 								</div>
 							</div>							
 						</div>

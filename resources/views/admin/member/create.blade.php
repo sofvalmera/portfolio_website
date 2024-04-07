@@ -6,7 +6,7 @@
 						@include('admin.message')
 						<div class="row mb-2">
 							<div class="col-sm-6">
-								<h1>Add Member</h1>
+								<h1>Add New Member</h1>
 							</div>
 							<div class="col-sm-6 text-right">
 								<a href="{{route('members.index')}}" class="btn btn-primary">Back</a>

@@ -19,10 +19,10 @@
 				<section class="content">
 					<!-- Default box -->
 					<div class="container-fluid">
-						<form action="" id="porfolioForm" name="portfolioForm">
+						<form action="" id="portfolioForm" name="portfolioForm">
 							@csrf
 							
-						<div class="card">
+							<div class="card">
 							<div class="card-body">								
 								<div class="row">
                                 <div class="col-md-6">
@@ -36,13 +36,7 @@
 										    </div>
 										</div>
                                     </div>
-                                <div class="col-md-6">
-										<div class="mb-3">
-											<label for="category">Category</label>
-											<input type="text" name="category" id="category" class="form-control" placeholder="Category">	
-											<p></p>
-										</div>
-									</div>
+                              
                                 <div class="col-md-6">
 										<div class="mb-3">
 											<label for="projectname">Project Name</label>
@@ -57,24 +51,10 @@
 											<p></p>
 										</div>
 									</div>
-                                  
-                                   
-                                    <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="description">Description</label>
-                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description"></textarea>
-                                                </div>
-                                            </div>   
+                                      
+								
 								
 									
-                                        <!-- @if(!empty($blog->image))
-                                        <div>
-                                            <img width="250" src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="">
-                                        </div>
-                                        @endif -->
-									<!-- </div>	 -->
-									
-
 																			
 								</div>
 							</div>							
@@ -110,10 +90,6 @@
 
 					window.location.href="{{route('portfolios.index')}}";
 
-                    $("#category").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
                     $("#projectname").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
@@ -133,17 +109,6 @@
                         }
 
 					var errors = response['errors'];
-
-                    if(errors['category']){
-					$("#category").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['category']);
-				} else{
-					$("#category").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
 
                 if(errors['projectname']){
 					$("#projectname").addClass('is-invalid')

@@ -63,7 +63,7 @@ class MemberController extends Controller
                 $dPath=public_path().'/uploads/member/thumb/'.$newImageName;
                 $img = Image::make($sPath);
                 // $img->resize(450,600);
-                $img->fit(450, 300, function ($constraint) {
+                $img->fit(500, 500, function ($constraint) {
                     $constraint->upsize();
                 });
                 $img->save($dPath);
@@ -142,7 +142,7 @@ class MemberController extends Controller
                 $dPath=public_path().'/uploads/member/thumb/'.$newImageName;
                 $img = Image::make($sPath);
                 // $img->resize(450,600);
-                $img->fit(450, 300, function ($constraint) {
+                $img->fit(500, 500, function ($constraint) {
                     $constraint->upsize();
                 });
                 $img->save($dPath);

@@ -1309,11 +1309,11 @@ a:focus {
     background: #007bff;
 }
 
-.contact .container-fluid {
-    /* background: url(../img/sof.png) left center no-repeat; */
+/* .contact .container-fluid {
+   
     background: url(../img/sof.png) left center no-repeat;
     background-size: contain;
-}
+} */
 
 .contact .contact-form {
     position: relative;

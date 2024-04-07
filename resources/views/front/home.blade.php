@@ -6,9 +6,10 @@
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                    @if (getProfiles()->isNotEmpty())
-                    @foreach (getProfiles() as $profile)
+                   
                         <div class="about-img">
+                        @if (getProfiles()->isNotEmpty())
+                    @foreach (getProfiles() as $profile)
                         @if ($profile->image != "")
                             <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
                             @endif
@@ -32,7 +33,10 @@
                           @foreach (getProfiles() as $profile)
                                 <p> I'm <b>{{$profile->fullname}}</b>, a third-year BSIT student at MLG College of Learning, 
                                 with a passion for web development. I'm dedicated to mastering the art of web development, 
-                                fueled by curiosity, creativity, and a commitment to continuous learning.<br><br>
+                                fueled by curiosity, creativity, and a commitment to continuous learning. <br><br>
+                                <!-- a third-year BSIT student at MLG College of Learning, 
+                                with a passion for web development. I'm dedicated to mastering the art of web development, 
+                                fueled by curiosity, creativity, and a commitment to continuous learning. -->
                                 
                                 <B>Birthday:</b>&nbsp&nbsp{{$profile->birthday}}  <br>
                                 <B>Phone:</b>&nbsp&nbsp +63{{$profile->phonenumber}} <br>
@@ -286,22 +290,7 @@
         <!-- Job Experience End -->
         
         
-        <!-- Banner Start -->
-       <!--<div class="banner wow zoomIn" data-wow-delay="0.1s">
-              <div class="container">
-                <div class="section-header text-center">
-                    <p>Reasonable Price</p>
-                    <h2>Get A <span>Special</span> Price</h2>
-                </div>
-                <div class="container banner-text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. 
-                    </p>
-                    <a class="btn">Pricing Plan</a>
-                </div>
-            </div> 
-        </div>-->
-        <!-- Banner End -->
+       
 
 
         <!-- Portfolio Start -->
@@ -311,86 +300,32 @@
                     <p>Portfolio</p>
                     <h2>My Works</h2>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <ul id="portfolio-filter">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-1">Web Design</li>
-                            <li data-filter=".filter-2">Mobile Apps</li>
-                            <li data-filter=".filter-3">Game Dev</li>
-                        </ul>
-                    </div>
-                </div>
+              
                 <div class="row portfolio-container">
                     <div  class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="portfolio-wrap">
+                       
                             <div class="portfolio-img">
-                                <img src="{{asset('front-assets/img/sales.png')}}"  alt="Image">
+                            @if (getPortfolios()->isNotEmpty())
+                        @foreach (getPortfolios() as $portfolio)
+                            @if ($portfolio->image != "")
+                            <img width="20" height="20" src="{{asset('uploads/portfolio/thumb/'.$portfolio->image)}}" alt="" class="img-fluid">
+                            @endif
+                                <!-- <img src="{{asset('front-assets/img/sales.png')}}"  alt="Image"> -->
                             </div>
                             <div class="portfolio-text">
-                                <h3>Sales System</h3>
-                                <a class="btn" href="{{asset('front-assets/img/sales.png')}}" data-lightbox="portfolio">+</a>
+                                <h3>{{$portfolio->projectname}}</h3>
+                                <a class="btn" href="{{asset('uploads/portfolio/thumb/'.$portfolio->image)}}" data-lightbox="portfolio">+</a>
                                 <!-- <a class="btn"  href="http://salesystem.webactivities.online/" >&#128279;</a> -->
-                                <a class="btn"  href="http://salesystem.webactivities.online/">~</a>
+                                <a class="btn"  href="{{$portfolio->projectlink}}">~</a>
+
+                                  @endforeach
+                            @endif
                                 
                             </div>
                         </div>
                     </div>
-                   <!-- <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s"> -->
-                         <!-- <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-2.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>Product Landing Page</h3>
-                                <a class="btn" href="img/portfolio-2.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div>-->
-                    <!-- </div>  -->
-                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s"> -->
-                        <!-- <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-3.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>JavaScript quiz game</h3>
-                                <a class="btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div> -->
-                    <!-- </div> -->
-                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.6s"> -->
-                        <!-- <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-4.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>JavaScript drawing</h3>
-                                <a class="btn" href="img/portfolio-4.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div> -->
-                    <!-- </div> -->
-                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.8s"> -->
-                        <!-- <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-5.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>Social Mobile Apps</h3>
-                                <a class="btn" href="img/portfolio-5.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div> -->
-                    <!-- </div> -->
-                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="1s"> -->
-                        <!-- <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-6.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>Company Website</h3>
-                                <a class="btn" href="img/portfolio-6.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div> -->
-                    <!-- </div> -->
+                  
                 </div>
             </div>
         </div>
@@ -398,22 +333,7 @@
         <!-- Portfolio End -->
         
         
-        <!-- Banner Start -->
-        <!-- <div class="banner wow zoomIn" data-wow-delay="0.1s"> -->
-             <!-- <div class="container">
-                <div class="section-header text-center">
-                    <p>Awesome Discount</p>
-                    <h2>Get <span>30%</span> Discount</h2>
-                </div>
-                <div class="container banner-text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. 
-                    </p>
-                    <a class="btn">Order Now</a>
-                </div>
-            </div> -->
-        <!-- </div>  -->
-        <!-- Banner End -->
+       
         
         
         <!-- Price Start -->
@@ -431,18 +351,7 @@
                     <i class="fa fa-quote-left"></i>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
-                    <!-- <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-1.jpg" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
-                            </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
-                        </div>
-                    </div> -->
+                  
                     <div class="testimonial-item">
                         <div class="testimonial-img">
                             <img src="{{asset('front-assets/img/lina.jpg')}}" alt="Image">
@@ -481,16 +390,21 @@
                     <h2>Team Members</h2>
                 </div>
                 <div class="row">
+                @if (getMembers()->isNotEmpty())
+                        @foreach (getMembers() as $member)
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="{{asset('front-assets/img/riz.jpg')}}" alt="Image">
+                            @if ($member->image != "")
+                            <img width="20" height="20" src="{{asset('uploads/member/thumb/'.$member->image)}}" alt="" class="img-fluid">
+                            @endif
+                                <!-- <img src="{{asset('front-assets/img/riz.jpg')}}" alt="Image"> -->
                             </div>
                             <div class="team-text">
-                                <h2>Rizaldo Inghug</h2>
-                                <h4>Front-End Designer</h4>
+                                <h2>{{$member->name}}</h2>
+                                <h4>{{$member->role}}</h4>
                                 <p>
-                                    A Great Front-End Designer.
+                                {{$member->description}}
                                 </p>
                                 <!-- <div class="team-social">
                                     <a class="btn" href=""><i class="fab fa-twitter"></i></a>
@@ -501,7 +415,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                    @endforeach
+                            @endif
+                    <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-item">
                             <div class="team-img">
                                 <img src="{{asset('front-assets/img/fred.png')}}" alt="Image">
@@ -512,10 +428,11 @@
                                 <p>
                                     A Great Back-End Designer.
                                 </p>
+                                
                                
                            </div>
                         </div>
-                    </div>
+                    </div> -->
                    
                 </div>
             </div>
@@ -530,7 +447,7 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-md-4"></div>
+                        <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <div class="contact-form">
                                 <div id="success"></div>

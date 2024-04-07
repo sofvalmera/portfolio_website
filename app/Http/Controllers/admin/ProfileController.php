@@ -34,6 +34,7 @@ class ProfileController extends Controller
     }
      public function store(Request $request){
         $validator =Validator::make($request->all(),[
+            'role'  => 'required',
             'fullname' => 'required',
             'age' => 'required',
             'degree' => 'required',
@@ -50,6 +51,8 @@ class ProfileController extends Controller
         
         if($validator->passes()){
             $profile=new Profile();
+            $profile->role = $request->role;
+            // $profile->description = $request->description;
             $profile->fullname = $request->fullname;
             $profile->age = $request->age;
             $profile->degree = $request->degree;
@@ -129,6 +132,7 @@ class ProfileController extends Controller
             ]);
         }
         $validator =Validator::make($request->all(),[
+            'role'  => 'required',
             'fullname' => 'required',
             'age' => 'required',
             'degree' => 'required',
@@ -144,6 +148,8 @@ class ProfileController extends Controller
         ]);
         
         if($validator->passes()){
+            $profile->role = $request->role;
+            // $profile->description = $request->description;
             $profile->fullname = $request->fullname;
             $profile->age = $request->age;
             $profile->degree = $request->degree;

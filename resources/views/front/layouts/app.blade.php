@@ -88,10 +88,16 @@
                         <div class="hero-content">
                             <div class="hero-text">
                                 <p>I'm</p>
-                                <h1>Sofronio Jr. L. Valmera</h1>
+                                @if (getProfiles()->isNotEmpty())
+                        @foreach (getProfiles() as $profile)
+                                <h1>{{$profile->fullname}}</h1>
+                                
+                               
                                 <h2></h2>
                                 <!-- <div class="typed-text">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div> -->
-                                <div class="typed-text">Web Developer </div>
+                                <div class="typed-text">{{$profile->role}} </div>
+                                @endforeach
+                            @endif
                             </div>
                             <div class="hero-btn">
                                 <!-- <a class="btn" href="">Hire Me</a> -->
@@ -142,7 +148,7 @@
                     </div>
                 </div>
                 <div class="container copyright">
-                    <p>&copy; <a href="#">SJLV</a>, All Right Reserved | Designed By <a href="#">SofValmera</a></p>
+                    <p>&copy; <a href="#">SJLV</a>, All Right Reserved | Designed By <a href="#">SJLV</a></p>
                 </div>
             </div>
         </div>

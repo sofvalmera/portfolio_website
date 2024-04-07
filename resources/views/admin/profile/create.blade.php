@@ -131,6 +131,14 @@
 											<p></p>
 										</div>
 									</div>
+									<div class="col-md-6">
+										<div class="mb-3">
+											<label for="role">Role</label>
+											<input type="text" name="role" id="role" class="form-control" placeholder="Role">	
+											<p></p>
+										</div>
+									</div>
+									
                                   
                                     
 
@@ -157,7 +165,14 @@
                                             <!-- <p></p> -->
                                         </div>
                                     </div>
-                                
+
+									
+									<!-- <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="description">Description</label>
+                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description"></textarea>
+                                                </div>
+                                            </div>  -->
                                 
                                     
                                    
@@ -199,6 +214,13 @@
 				if(response["status"] == true){
 
 					window.location.href="{{route('profiles.index')}}";
+					
+					$("#role").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+					
+					
 
 					$("#fullname").removeClass('is-invalid')
 					.siblings('p')
@@ -267,6 +289,17 @@
                         }
 
 					var errors = response['errors'];
+					if(errors['role']){
+					$("#role").addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html(errors['role']);
+				} else{
+					$("#role").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+				}
+			
 				if(errors['fullname']){
 					$("#fullname").addClass('is-invalid')
 					.siblings('p')

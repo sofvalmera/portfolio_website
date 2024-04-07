@@ -153,6 +153,19 @@
 											</select>
 										</div>
 									</div>	
+									<div class="col-md-6">
+										<div class="mb-3">
+											<label for="role">Role</label>
+											<input type="text" name="role" id="role" class="form-control" placeholder="role" value="{{$profile->role}}">	
+											<p></p>
+										</div>
+									</div>
+									<!-- <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="description">Description</label>
+                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$profile->description}}</textarea>
+                                                </div>
+                                            </div>       -->
 
 																			
 								</div>
@@ -186,6 +199,12 @@
 				if(response["status"] == true){
 
 					window.location.href="{{route('profiles.index')}}";
+					$("#role").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+					
+					
 					$("#fullname").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
@@ -245,6 +264,17 @@
                             window.location.href="{{route('profiles.index')}}";
 
                         }
+						if(errors['role']){
+					$("#role").addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html(errors['role']);
+				} else{
+					$("#role").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+				}
+				
 
 						if(errors['fullname']){
 					$("#fullname").addClass('is-invalid')
