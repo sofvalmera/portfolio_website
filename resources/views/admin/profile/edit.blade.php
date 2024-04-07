@@ -45,24 +45,28 @@
 										<div class="mb-3">
 											<label for="fullname">Full Name</label>
 											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Full Name" value="{{$profile->fullname}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="age">Age</label>
 											<input type="number" name="age" id="age" class="form-control" placeholder="Age" value="{{$profile->age}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="age">Degree</label>
-											<input type="text" name="degree" id="degree" class="form-control" placeholder="Degree" value="{{$profile->degree}}">	
+											<input type="text" name="degree" id="degree" class="form-control" placeholder="Degree" value="{{$profile->degree}}">
+											<p></p>	
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="birthday">Birthday</label>
 											<input type="date" name="birthday" id="birthday" class="form-control" placeholder="Birthday" value="{{$profile->birthday}}">	
+											<p></p>
 										</div>
 									</div>
 									
@@ -70,48 +74,56 @@
 										<div class="mb-3">
 											<label for="phonenumber">Phone Number</label>
 											<input type="number" name="phonenumber" id="phonenumber" class="form-control" placeholder="Phone Number" value="{{$profile->phonenumber}}">	
+											<p></p>
 										</div>
 									</div>
                                     <div class="col-md-6">
 										<div class="mb-3">
 											<label for="email">Email</label>
-											<input readonly name="email" id="email" class="form-control" placeholder="Email" value="{{Auth::guard('admin')->user()->email}}">	
+											<input  type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{$profile->email}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="barangay">Barangay Address</label>
 											<input type="text" name="barangay" id="barangay" class="form-control" placeholder="Barangay Address" value="{{$profile->barangay}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="municipality">Municipality</label>
 											<input type="text" name="municipality" id="municipality" class="form-control" placeholder="Municipality" value="{{$profile->municipality}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="province">Province</label>
 											<input type="text" name="province" id="province" class="form-control" placeholder="Province" value="{{$profile->province}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="zipcode">Zip Code</label>
 											<input type="number" name="zipcode" id="zipcode" class="form-control" placeholder="Zip Code" value="{{$profile->zipcode}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="country">Country</label>
 											<input type="text" name="country" id="country" class="form-control" placeholder="Country" value="{{$profile->country}}">	
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label for="religion">Religion</label>
 											<input type="text" name="religion" id="religion" class="form-control" placeholder="Religion" value="{{$profile->religion}}">	
+											<p></p>
 										</div>
 									</div>
 									
@@ -194,6 +206,10 @@
 					.removeClass('invalid-feedback')
 					.html("");
 					$("#phonenumber").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+					$("#email").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
 					.html("");
@@ -282,6 +298,16 @@
 					.html("");
 				}
                 if(errors['email']){
+					$("#email").addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html(errors['email']);
+				} else{
+					$("#email").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+				}
+				if(errors['email']){
 					$("#email").addClass('is-invalid')
 					.siblings('p')
 					.addClass('invalid-feedback').html(errors['email']);

@@ -36,9 +36,15 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="{{route('portfolios.index')}}" class="nav-link">
 									<i class="nav-icon fas fa-briefcase"></i>
 									<p>Portfolio</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{route('members.index')}}" class="nav-link">
+									<i class="nav-icon fas fa-user-friends"></i>
+									<p>Team Members</p>
 								</a>
 							</li>
 							
@@ -71,7 +77,7 @@
 							</li>
 							
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="{{route('users.index')}}" class="nav-link">
 									<i class="nav-icon  fas fa-users"></i>
 									<p>Users</p>
 								</a>

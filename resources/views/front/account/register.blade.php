@@ -68,6 +68,70 @@
             </div>
         </div>
     </section>
+    <script>
+
+$("#registerf").submit(function(event){
+		event.preventDefault();
+		// var element =$(this);
+
+
+		$("button[type=submit]").prop('disable',true);
+		$.ajax({
+			url: '{{ route("account.processRegister") }}',
+			type: 'post',
+			data: $(this).serializeArray(),
+			dataType:'json',
+			success:function(response){
+			
+
+					var errors = response.errors;
+                            if(response["status"] == false){
+                    if(errors.name){
+                        $("#name").siblings("p").addClass('invalid-feedback').html(errors.name);
+                        $("#name").addClass('is-invalid-feedback');
+                    }else {
+                        $("#name").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#name").removeClass('is-invalid');
+                    }
+                    if(errors.email){
+                        $("#email").siblings("p").addClass('invalid-feedback').html(errors.email);
+                        $("#email").addClass('is-invalid-feedback');
+                    }else {
+                        $("#email").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#email").removeClass('is-invalid');
+                    }
+                    if(errors.password){
+                        $("#password").siblings("p").addClass('invalid-feedback').html(errors.password);
+                        $("#password").addClass('is-invalid-feedback');
+                    }else {
+                        $("#password").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#password").removeClass('is-invalid');
+                    }
+                    
+
+
+			
+
+				}else{
+                    $("#name").siblings("p").removeClass('invalid-feedback').html('');
+                    $("#name").removeClass('is-invalid');
+
+                    $("#email").siblings("p").addClass('invalid-feedback').html(errors.email);
+                        $("#email").addClass('is-invalid-feedback');
+                        
+                        $("#password").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#password").removeClass('is-invalid');
+                }
+				
+
+			}, error: function(jqXHR, exception){
+				console.log("Something Went Wrong");
+			}
+		})
+	});
+
+</script>
+
  <!-- JavaScript Libraries -->
  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

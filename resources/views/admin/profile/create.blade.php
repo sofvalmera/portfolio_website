@@ -85,7 +85,7 @@
                                     <div class="col-md-6">
 										<div class="mb-3">
 											<label for="email">Email</label>
-											<input readonly name="email" id="email" class="form-control" value="{{Auth::guard('admin')->user()->email}}" placeholder="Email">	
+											<input  type="email" name="email" id="email" class="form-control" placeholder="Email">	
 											<p></p>
 										</div>
 									</div>
@@ -223,6 +223,11 @@
 					.removeClass('invalid-feedback')
 					.html("");
 
+					$("#email").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+
                  
 
                     $("#barangay").removeClass('is-invalid')
@@ -309,6 +314,16 @@
 					.addClass('invalid-feedback').html(errors['phonenumber']);
 				} else{
 					$("#phonenumber").removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback')
+					.html("");
+				}
+				if(errors['email']){
+					$("#email").addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html(errors['email']);
+				} else{
+					$("#email").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
 					.html("");

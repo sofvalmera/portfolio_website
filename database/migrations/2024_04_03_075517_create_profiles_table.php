@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('degree');
             $table->string('birthday');
             $table->string('phonenumber');
+            $table->string('email');
             $table->string('barangay');
             $table->string('province');
             $table->integer('zipcode');

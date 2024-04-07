@@ -121,6 +121,7 @@
 				if(response["status"] == true){
 
 					window.location.href="{{route('blogs.index')}}";
+					
 					$("#title").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')

@@ -125,7 +125,7 @@
                         <h3>{{$profile->barangay}},{{$profile->municipality}},{{$profile->province}} {{$profile->zipcode}}</h3>
                         <div class="footer-menu">
                             <p>+63{{$profile->phonenumber}}</p>
-                            <p>{{Auth::guard('admin')->user()->email}}</p>
+                            <p>{{$profile->email}}</p>
                             @endforeach
                             @endif
                         </div>

@@ -39,6 +39,7 @@ class ProfileController extends Controller
             'degree' => 'required',
             'birthday' => 'required',
             'phonenumber' => 'required',
+            'email' => 'required',
             'barangay' => 'required',
             'province' => 'required',
             'zipcode' => 'required',
@@ -54,6 +55,7 @@ class ProfileController extends Controller
             $profile->degree = $request->degree;
             $profile->birthday = $request->birthday;
             $profile->phonenumber = $request->phonenumber;
+            $profile->email = $request->email;
             $profile->barangay = $request->barangay;
             $profile->province = $request->province;
             $profile->zipcode = $request->zipcode;
@@ -132,6 +134,7 @@ class ProfileController extends Controller
             'degree' => 'required',
             'birthday' => 'required',
             'phonenumber' => 'required',
+            'email' => 'required',
             'barangay' => 'required',
             'province' => 'required',
             'zipcode' => 'required',
@@ -146,6 +149,7 @@ class ProfileController extends Controller
             $profile->degree = $request->degree;
             $profile->birthday = $request->birthday;
             $profile->phonenumber = $request->phonenumber;
+            $profile->email = $request->email;
             $profile->barangay = $request->barangay;
             $profile->province = $request->province;
             $profile->zipcode = $request->zipcode;

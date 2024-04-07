@@ -28,7 +28,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="mb-3">
-											<label for="name">Old Password</label>
+											<label for="name">Old Password</label>=
 											<input type="password" name="old_password" id="old_password" class="form-control" placeholder="Old Password">	
 											<p></p>
 										</div>

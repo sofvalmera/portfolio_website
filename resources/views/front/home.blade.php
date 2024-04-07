@@ -12,6 +12,8 @@
                         @if ($profile->image != "")
                             <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
                             @endif
+                            @endforeach
+                            @endif
                            
                             
                             <!-- <img src="{{asset('front-assets/img/soo.jpg')}}" alt="Image"> -->
@@ -26,6 +28,8 @@
                             </div>
                             
                             <div class="about-text">
+                            @if (getProfiles()->isNotEmpty())
+                          @foreach (getProfiles() as $profile)
                                 <p> I'm <b>{{$profile->fullname}}</b>, a third-year BSIT student at MLG College of Learning, 
                                 with a passion for web development. I'm dedicated to mastering the art of web development, 
                                 fueled by curiosity, creativity, and a commitment to continuous learning.<br><br>
@@ -35,12 +39,12 @@
                                 <B>Address:</b>&nbsp&nbspBrgy.&nbsp{{$profile->barangay}}&nbsp{{$profile->municipality}},{{$profile->province}}&nbsp{{$profile->zipcode}} <br>
                                 <B>Age:</b> &nbsp&nbsp{{$profile->age}} <br>
                                 <B>Degree:</b> &nbsp&nbsp{{$profile->degree}} <br>
-                                <B>Email:</b>&nbsp&nbsp{{Auth::guard('admin')->user()->email}}  <br>
+                                <B>Personal Email:</b>&nbsp&nbsp{{$profile->email}}  <br>
                                 </p>  
+                            
                                     
                             </div>
-                            @endforeach
-                            @endif
+                           
                             
                             <div class="skills">
                                 <div class="skill-name">
@@ -68,6 +72,8 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
+                            @endforeach
+                            @endif
                             <!-- <a class="btn" href="#service">Read More</a> -->
                         </div>
                     </div>

@@ -10,6 +10,9 @@ use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\PortfolioController;
 use App\Http\Controllers\admin\SocialController;
+use App\Http\Controllers\admin\ContactController;
+use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\admin\TempImageController;
 // use App\Http\Controllers\HomeBlogController;
@@ -31,8 +34,19 @@ use App\Http\Controllers\admin\TempImageController;
 // });
 Route::get('/',[FrontController::class,'index'])->name('front.home');
 
-Route::get('/register',[AuthController::class,'register'])->name('account.register');
-Route::post('/process-register',[AuthController::class,'processDioskoLordtaasapamani'])->name('account.processRegister');
+
+Route::group(['prefix' => 'account'],function(){
+    Route::group(['middleware' => 'guest'],function(){
+
+   Route::get('/login',[AuthController::class,'login'])->name('account.login');
+    Route::get('/register',[AuthController::class,'register'])->name('account.register');
+    Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
+
+       });
+        Route::group(['middleware' => 'auth'],function(){
+
+        });
+    });
 
 Route::group(['prefix' => 'admin'],function(){
     Route::group(['middleware' => 'admin.guest'],function(){
@@ -73,32 +87,43 @@ Route::group(['prefix' => 'admin'],function(){
            Route::put('/blogs/{blog}',[BlogController::class,'update'])->name('blogs.update');
            Route::delete('/blogs/{blog}',[BlogController::class,'destroy'])->name('blogs.delete');
 
+           //member route ni
+           Route::get('/members',[MemberController::class,'index'])->name('members.index');
+           Route::get('/members/create',[MemberController::class,'create'])->name('members.create');
+          Route::post('/members',[MemberController::class,'store'])->name('members.store');
+          Route::get('/members/{member}/edit',[MemberController::class,'edit'])->name('members.edit');
+          Route::put('/members/{member}',[MemberController::class,'update'])->name('members.update');
+          Route::delete('/members/{member}',[MemberController::class,'destroy'])->name('members.delete');
              
             //social media route ni
-            Route::get('/socials',[SocialController::class,'index'])->name('socials.index');
-            Route::get('/socials/create',[SocialController::class,'create'])->name('socials.create');
+           Route::get('/socials',[SocialController::class,'index'])->name('socials.index');
+           Route::get('/socials/create',[SocialController::class,'create'])->name('socials.create');
            Route::post('/socials',[SocialController::class,'store'])->name('socials.store');
            Route::get('/socials/{blog}/edit',[SocialController::class,'edit'])->name('socials.edit');
            Route::put('/socials/{blog}',[SocialController::class,'update'])->name('socials.update');
            Route::delete('/socials/{blog}',[SocialController::class,'destroy'])->name('socials.delete');
 
               //portfolio
-              Route::get('/portfolio',[PortfolioController::class,'index'])->name('portfolio.index');
+            Route::get('/portfolios',[PortfolioController::class,'index'])->name('portfolios.index');
+            Route::get('/portfolios/create',[PortfolioController::class,'create'])->name('portfolios.create');
+           Route::post('/portfolios',[PortfolioController::class,'store'])->name('portfolios.store');
+           Route::get('/portfolios/{portfolio}/edit',[PortfolioController::class,'edit'])->name('portfolios.edit');
+           Route::put('/portfolios/{portfolio}',[PortfolioController::class,'update'])->name('portfolios.update');
+           Route::delete('/portfolios/{portfolio}',[PortfolioController::class,'destroy'])->name('portfolios.delete');
+
+            
+              //contact
+              Route::get('/contact',[ContactController::class,'index'])->name('contacts.index');
+
+              
+              //user
+              Route::get('/user',[UserController::class,'index'])->name('users.index');
+
 
             Route::get('/adminprofile',[SettingController::class,'adminprofile'])->name('admin.profile');
             Route::get('/change-password',[SettingController::class,'showChangePasswordForm'])->name('admin.showChangePasswordForm');
             Route::post('/process-change-password',[SettingController::class,'processChangePassword'])->name('admin.processChangePassword');
 
-            // Route::get('/getSlug',function(Request $request){
-            //     $slug ='';
-            //     if(!empty($request->title)){
-            //         $slug = Str::slug($request->title);
-            //     }
-            //     return response()->json([
-            //         'status' => true,
-            //         'slug' => $slug
-            //     ]);
-            // })->name('getSlug');
 
         });
     });

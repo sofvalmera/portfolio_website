@@ -12,7 +12,7 @@ function getBlogs(){
 }
 
 function getProfiles(){
-    return Profile::orderBy('fullname','ASC')
+    return Profile::orderBy('id','ASC')
      ->get();
  
  }
