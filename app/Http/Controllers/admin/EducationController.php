@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Education;
+use App\Models\Educ;
 use Illuminate\Support\Facades\Validator;
 // use App\Models\TempImage;
 // use App\Http\Controllers\admin\TempImageController;
@@ -17,10 +17,10 @@ class EducationController extends Controller
 {
     //
     public function index(Request $request){
-         $educations= Education::latest();
+         $educations= Educ::latest();
          if(!empty($request->get('keyword'))){
 
-            $educations= $educations->where('id','like','%'.$request->get('keyword').'%');
+            $educations= $educations->where('schoolname','like','%'.$request->get('keyword').'%');
          }
 
 
@@ -41,7 +41,7 @@ class EducationController extends Controller
         ]);
         
         if($validator->passes()){
-            $education=new Education();
+            $education=new Educ();
             $education-> schoolname= $request->schoolname;
             $education->schoolyear = $request->schoolyear;
             $education->schoolfulladdress = $request->schoolfulladdress;
@@ -69,7 +69,7 @@ class EducationController extends Controller
     }
      public function edit($educationId, Request $request){
 
-        $education=Education::find($educationId);
+        $education=Educ::find($educationId);
 
         if(empty($education)){
             return redirect()->route('educations.index');
@@ -79,7 +79,7 @@ class EducationController extends Controller
 
     }
      public function update($educationId, Request $request){
-        $education=Education::find($educationId);
+        $education=Educ::find($educationId);
 
         if(empty($education)){
             $request->session()->flash('error',' not Found');
@@ -122,7 +122,7 @@ class EducationController extends Controller
 
     }
      public function destroy($educationId, Request $request){
-        $education=Education::find($educationId);
+        $education=Educ::find($educationId);
 
         if(empty($education)){
             $education->session()->flash('error',' not found');

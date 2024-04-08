@@ -1,13 +1,13 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 				<!-- Brand Logo -->
-				<a href="#" class="brand-link">
+				<a href="{{route('admin.dashboard')}}" class="brand-link">
 					<!-- <img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-					<span class="brand-text font-weight-light"><CENTER>  @if (getProfiles()->isNotEmpty())
+					<span class="brand-text font-weight-light"><font size ="5"><CENTER><b>  @if (getProfiles()->isNotEmpty())
                         @foreach (getProfiles() as $profile) 
                         {{$profile->textlogo}}  
                          @endforeach
                             @endif
-						</CENTER>
+</b></CENTER></font>
 						</span>
 				</a>
 				<!-- Sidebar -->

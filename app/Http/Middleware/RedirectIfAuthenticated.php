@@ -14,9 +14,9 @@ class RedirectIfAuthenticated
     
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
-            if (Auth::guard('spectator')->check()) {
-                return redirect()->route('spectator.dashboard');  
-    }
+    //         if (Auth::guard('spectator')->check()) {
+    //             return redirect()->route('spectator.dashboard');  
+    // }
 
         return $next($request);
     }

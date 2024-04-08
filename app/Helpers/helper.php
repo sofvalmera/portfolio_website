@@ -61,10 +61,16 @@ function getProfiles(){
      ->get();
  
  }
- function getEducation(){
-    // return Resume::orderBy('id','ASC')
+ function getExperience(){
+    return Experience::orderBy('id','ASC')
     // ->where('id',1)
-    //  ->get();
+     ->get();
+ 
+ }
+ function getEducation(){
+    return Education::orderBy('id','ASC')
+    // ->where('id',1)
+     ->get();
  
  }
 

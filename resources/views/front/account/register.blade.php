@@ -26,10 +26,10 @@
 <section class="section-5 pt-3 pb-3 mb-3 bg-white">
         <div class="container">
             <div class="light-font">
-                <!-- <ol class="breadcrumb primary-color mb-0">
+                <ol class="breadcrumb primary-color mb-0">
                      <li class="breadcrumb-item"><a class="white-text" href="{{route('front.home')}}">Home</a></li>
-                    <li class="breadcrumb-item">Sign Up</li>
-                </ol> -->
+                    <li class="breadcrumb-item">Register</li>
+                </ol>
             </div>
         </div>
     </section>
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="login-form">    
                 <form action="" method="post" name="registerf" id="registerf">
-                    <h4 class="modal-title">Sign Up</h4>
+                    <!-- <h4 class="modal-title">Sign Up</h4> -->
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Name" id="name" name="name">
                         <p></p>

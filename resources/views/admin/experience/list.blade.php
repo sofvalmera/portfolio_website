@@ -46,9 +46,9 @@
 									<thead>
 										<tr>
 											<th width="60">ID</th>
-											<th>School Name</th>
-											<th>School Address</th>
-											<th>School Year</th>
+											<th>Experience Name</th>
+											<th>Experience Address</th>
+											<th>Experience Year</th>
 										
 											<!-- <th width="100">Status</th> -->
 											<th width="100">Action</th>
@@ -59,9 +59,9 @@
 										@foreach($experiences as $experience)
 										<tr>
 											<td>{{$experience->id}}</td>
-											<td>{{$experience->schoolname}}</td>
-											<td>{{$experience->schooladdress}}</td>
-											<td>{{$experience->schoolyear}}</td>
+											<td>{{$experience->experiencename}}</td>
+											<td>{{$experience->experienceaddress}}</td>
+											<td>{{$experience->experienceyear}}</td>
 											
 											
 

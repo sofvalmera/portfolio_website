@@ -215,7 +215,23 @@
                     <p>My Resume</p>
                     <h2>Education</h2>
                 </header>
+
                 <div class="timeline">
+    @foreach (getExperience() as $key => $experience)
+        <div class="timeline-item {{ $key % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $key % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
+            <div class="timeline-text">
+                <div class="timeline-date">{{ $experience->experienceyearear }} </div>
+                <h2>experiencename</h2>
+                <h4>{{ $experience->experienceaddress }}</h4>
+                <p>{{ $experience->experiencedescription }}</p>
+               
+            </div>
+        </div>
+    @endforeach
+</div>
+              
+
+                <!-- <div class="timeline">
                     <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                         <div class="timeline-text">
                             <div class="timeline-date">2021 - 2024</div>
@@ -259,7 +275,7 @@
                                 Most Resourceful
                             </p>
                         </div>
-                    </div>
+                    </div> -->
 
             </div>
         </div>
@@ -268,6 +284,19 @@
                     <h2>Experience</h2>
                 </header>
                 <div class="timeline">
+    @foreach (getExperience() as $key => $experience)
+        <div class="timeline-item {{ $key % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $key % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
+            <div class="timeline-text">
+                <div class="timeline-date">{{ $experience->experienceyearear }} </div>
+                <h2>experiencename</h2>
+                <h4>{{ $experience->experienceaddress }}</h4>
+                <p>{{ $experience->experiencedescription }}</p>
+               
+            </div>
+        </div>
+    @endforeach
+</div>
+                <!-- <div class="timeline">
                     <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                         <div class="timeline-text">
                              <div class="timeline-date">2021 - 2024</div>
@@ -295,7 +324,7 @@
                         </div>
                            
                     </div>
-                   
+                    -->
                    
 
             </div>
@@ -400,11 +429,12 @@
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <p>My Team</p>
+                    @if (getMembers()->isNotEmpty())
+                        @foreach (getMembers() as $member)
                     <h2>Team Members</h2>
                 </div>
                 <div class="row">
-                @if (getMembers()->isNotEmpty())
-                        @foreach (getMembers() as $member)
+             
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="team-item">
                             <div class="team-img">
