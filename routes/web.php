@@ -15,6 +15,8 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SkillController;
+use App\Http\Controllers\admin\EducationController;
+use App\Http\Controllers\admin\ExperienceController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\admin\TempImageController;
 // use App\Http\Controllers\HomeBlogController;
@@ -97,6 +99,24 @@ Route::group(['prefix' => 'admin'],function(){
            Route::get('/blogs/{blog}/edit',[BlogController::class,'edit'])->name('blogs.edit');
            Route::put('/blogs/{blog}',[BlogController::class,'update'])->name('blogs.update');
            Route::delete('/blogs/{blog}',[BlogController::class,'destroy'])->name('blogs.delete');
+
+             
+            //experience route ni
+            Route::get('/experiences',[ExperienceController::class,'index'])->name('experiences.index');
+            Route::get('/experiences/create',[ExperienceController::class,'create'])->name('experiences.create');
+           Route::post('/experiences',[ExperienceController::class,'store'])->name('experiences.store');
+           Route::get('/experiences/{experience}/edit',[ExperienceController::class,'edit'])->name('experiences.edit');
+           Route::put('/experiences/{experience}',[ExperienceController::class,'update'])->name('experiences.update');
+           Route::delete('/experiences/{experience}',[ExperienceController::class,'destroy'])->name('experiences.delete');
+
+             
+            //education route ni
+            Route::get('/educations',[EducationController::class,'index'])->name('educations.index');
+            Route::get('/educations/create',[EducationController::class,'create'])->name('educations.create');
+           Route::post('/educations',[EducationController::class,'store'])->name('educations.store');
+           Route::get('/educations/{education}/edit',[EducationController::class,'edit'])->name('educations.edit');
+           Route::put('/educations/{education}',[EducationController::class,'update'])->name('educations.update');
+           Route::delete('/educations/{education}',[EducationController::class,'destroy'])->name('educations.delete');
 
            
               //skill

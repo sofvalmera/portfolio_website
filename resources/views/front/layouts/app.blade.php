@@ -104,10 +104,16 @@
                                 @endforeach
                             @endif
                             </div>
+                            <div id="success"></div>
+                                @if (getContacts()->isNotEmpty())
+                        @foreach (getContacts() as $contact)
+                                
                             <div class="hero-btn">
                                 <!-- <a class="btn" href="">Hire Me</a> -->
                                 <a class="btn"  href="#contact">Contact Me</a>
                             </div>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                     <!-- <div class="col-sm-12 col-md-6 d-none d-md-block">

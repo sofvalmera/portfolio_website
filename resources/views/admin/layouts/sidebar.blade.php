@@ -41,6 +41,21 @@
 									<p>Service</p>
 								</a>
 							</li>
+							<li class="nav-item">
+								<a href="{{route('educations.index')}}" class="nav-link">
+									<i class="nav-icon fas fa-graduation-cap"></i>
+									<p>Education</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{route('experiences.index')}}" class="nav-link">
+									<i class="nav-icon fas fa-briefcase"></i>
+									<p>Experience</p>
+								</a>
+							</li>
+						
+						
+
 						
 
 

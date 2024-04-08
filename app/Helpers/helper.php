@@ -8,6 +8,9 @@ use App\Models\Social;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Skill;
+use App\Models\Education;
+use App\Models\Experience;
+use App\Models\Testimonial;
 
 function getBlogs(){
    return Blog::orderBy('title','ASC')
@@ -56,6 +59,12 @@ function getProfiles(){
     return Skill::orderBy('id','ASC')
     // ->where('id',1)
      ->get();
+ 
+ }
+ function getEducation(){
+    // return Resume::orderBy('id','ASC')
+    // ->where('id',1)
+    //  ->get();
  
  }
 
