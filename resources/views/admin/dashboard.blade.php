@@ -22,26 +22,26 @@
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
 									<div class="inner">
-										<h3>4</h3>
-										<p>Spectators</p>
+										<h3>{{$countu}}</h3>
+										<p>Total Users</p>
 									</div>
 									<div class="icon">
 										<i class="ion ion-bag"></i>
 									</div>
-									<a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+									<a href="{{route('users.index')}}" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 							
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
 									<div class="inner">
-										<h3>5</h3>
+										<h3>{{$countt}}</h3>
 										<p>Testimonials</p>
 									</div>
 									<div class="icon">
 										<i class="ion ion-stats-bars"></i>
 									</div>
-									<a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+									<a href="{{route('testimonials.index')}}" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 							<div class="col-lg-4 col-6">							
@@ -71,7 +71,7 @@
 							
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
-									<div class="inner ">
+									<div class="inner">
 										<h3>{{$countp}}</h3>
 										<p>Projects</p>
 									</div>

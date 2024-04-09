@@ -60,7 +60,7 @@
 										<tr>
 											<td>{{$education->id}}</td>
 											<td>{{$education->schoolname}}</td>
-											<td>{{$education->schooladdress}}</td>
+											<td>{{$education->schoolfulladdress}}</td>
 											<td>{{$education->schoolyear}}</td>
 											
 											

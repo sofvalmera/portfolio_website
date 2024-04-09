@@ -2,19 +2,20 @@
 @extends('front.layouts.app')
 @section('content')
   <!-- About Start -->
+  @if (getProfiles()->isNotEmpty())
   <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                    
                         <div class="about-img">
-                        @if (getProfiles()->isNotEmpty())
+                       
                     @foreach (getProfiles() as $profile)
                         @if ($profile->image != "")
                             <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
                             @endif
                             @endforeach
-                            @endif
+                         
                            
                             
                             <!-- <img src="{{asset('front-assets/img/soo.jpg')}}" alt="Image"> -->
@@ -85,13 +86,99 @@
                             @endif
                     
                     @endforeach
-                            @endif
+                          
                 </div>
             </div>
         </div>
+        @endif
         <!-- About End -->
+         
+         <!-- Experience Start -->
+         @if (getEducations()->isNotEmpty())
+        <div class="experience" id="experience">
+            <div class="container">
 
+                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>My Resume</p>
+                    <h2>Education</h2>
+                </header>
+
+                <div class="timeline">
+    @foreach (getEducations() as $key => $education)
+        <div class="timeline-item {{ $key % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $key % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
+            <div class="timeline-text">
+                <div class="timeline-date">{{ $education->schoolyear }} </div>
+                <h2>{{ $education->schoolname }}</h2>
+                <h4>{{ $education->schooladdress }}</h4>
+                <p>{{ $education->description }}</p>
+               
+            </div>
+        </div>
+    @endforeach
+</div>
+              
+
+               
+
+            </div>
+        </div>
+        @endif
+        @if (getExperiences()->isNotEmpty())
+        <div class="experience" id="experience">
+        <div class="container">
+                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <h2>Experience</h2>
+                </header>
+                <div class="timeline">
+    @foreach (getExperiences() as $key => $experience)
+        <div class="timeline-item {{ $key % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $key % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
+            <div class="timeline-text">
+                <div class="timeline-date">{{ $experience->experienceyear }} </div>
+                <h2>{{ $experience->experiencename }}</h2>
+                <h4>{{ $experience->experienceaddress }}</h4>
+                <p>{{ $experience->experiencedescription }}</p>
+               
+            </div>
+        </div>
+    @endforeach
+</div>
+                <!-- <div class="timeline">
+                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                             <div class="timeline-date">2021 - 2024</div>
+                            <h2>Web Developer</h2>
+                            <h4>Hilongos, Leyte 6524 Philippines</h4>
+                            <p>
+                            Frontend Development<br>
+                            Backend Development<br>
+                            Responsive Web Design
+                                
+                            </p>
+                        </div>
+                           
+                    </div>
+                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                        <div class="timeline-date">2019 - 2020</div>
+                            <h2>Graphic Designer</h2>
+                            <h4>Hilongos, Leyte 6524 Philippines</h4>
+                            <p>
+                            Video Editing<br>
+                            Photo Editing
+                           
+                            </p>
+                        </div>
+                           
+                    </div>
+                    -->
+                   
+
+            </div>
+        </div>
+        @endif
+        <!-- Job Experience End -->
          <!-- Blog Start -->
+         @if (getBlogs()->isNotEmpty())
          <div class="blog" id="blog">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -99,14 +186,14 @@
                     <!-- <h2>Latest Articles</h2> -->
                 </div>
                 <div class="row">
-                @if (getBlogs()->isNotEmpty())
+             
                     @foreach (getBlogs() as $blog)
                
                     <div class="col-lg-6">
                         <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
                             <div class="blog-img">
                             @if ($blog->image != "")
-                            <img width="20" height="20" src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="" class="img-fluid">
+                            <img src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="Image" >
                             @endif
                                
                             </div>
@@ -126,15 +213,18 @@
                         </div>
                     </div>
                     @endforeach
-                    @endif
+                   
                 </div>
             </div>
         </div>
+        @endif
+        @endif
         <!-- Blog End -->
 
         
         
         <!-- Service Start -->
+        @if (getServices()->isNotEmpty())
         <div class="service" id="service">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -144,7 +234,7 @@
                 <div class="row">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="service-item">
-                        @if (getServices()->isNotEmpty())
+                       
                     @foreach (getServices() as $service)
                             <div class="service-icon">
                           
@@ -162,7 +252,7 @@
                         </div>
                     </div>
                     @endforeach
-                    @endif
+                   
                     <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="service-item">
                             <div class="service-icon">
@@ -205,108 +295,17 @@
                 </div>
             </div>
         </div>
+        @endif
         <!-- Service End -->
         
-        
-         <!-- Experience Start -->
-        <div class="experience" id="experience">
-            <div class="container">
-                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>My Resume</p>
-                    <h2>Education</h2>
-                </header>
-                <div class="timeline">
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2021 - 2024</div>
-                            <h2>MLG COLLEGE OF LEARNING INC. - (MLG INC.)</h2>
-                            <h4>Brgy. Atabay Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                            Bachelor of Science in Information Technology (BSIT)<br>
-                            Major in Web Developing
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2019 - 2021</div>
-                            <h2>BUNG-AW NATIONAL HIGH SCHOOL - (BNHS-Senior High)</h2>
-                            <h4>Brgy. Bung-aw Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                                Information and Communication Technology (ICT)<br>
-                                Major in Web Developing
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                        <div class="timeline-date">2015 - 2019</div>
-                            <h2>BUNG-AW NATIONAL HIGH SCHOOL - (BNHS-Junior High)</h2>
-                            <h4>Brgy. Bung-aw Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                                Most Resourceful<br>
-                                Most Resourceful
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2009 - 2015</div>
-                            <h2>BUNG-AW ELEMENTARY SCHOOL - (BES)</h2>
-                            <h4>Brgy. Bung-aw Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                                Most Resourceful<br>
-                                Most Resourceful
-                            </p>
-                        </div>
-                    </div>
-
-            </div>
-        </div>
-        <div class="container">
-                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <h2>Experience</h2>
-                </header>
-                <div class="timeline">
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                             <div class="timeline-date">2021 - 2024</div>
-                            <h2>Web Developer</h2>
-                            <h4>Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                            Frontend Development<br>
-                            Backend Development<br>
-                            Responsive Web Design
-                                
-                            </p>
-                        </div>
-                           
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                        <div class="timeline-date">2019 - 2020</div>
-                            <h2>Graphic Designer</h2>
-                            <h4>Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                            Video Editing<br>
-                            Photo Editing
-                           
-                            </p>
-                        </div>
-                           
-                    </div>
-                   
-                   
-
-            </div>
-        </div>
-        <!-- Job Experience End -->
-        
-        
        
+        
+          <!-- <img src="{{asset('front-assets/img/sales.png')}}"  alt="Image"> -->
+           <!-- <a class="btn"  href="http://salesystem.webactivities.online/" >&#128279;</a> -->
 
 
         <!-- Portfolio Start -->
+        @if (getPortfolios()->isNotEmpty())
         <div class="portfolio" id="portfolio">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -314,34 +313,41 @@
                     <h2>My Works</h2>
                 </div>
               
+                
                 <div class="row portfolio-container">
+               
+                        @foreach (getPortfolios() as $portfolio)
                     <div  class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                  
                         <div class="portfolio-wrap">
                        
                             <div class="portfolio-img">
-                            @if (getPortfolios()->isNotEmpty())
-                        @foreach (getPortfolios() as $portfolio)
+                           
                             @if ($portfolio->image != "")
                             <img width="20" height="20" src="{{asset('uploads/portfolio/thumb/'.$portfolio->image)}}" alt="" class="img-fluid">
                             @endif
-                                <!-- <img src="{{asset('front-assets/img/sales.png')}}"  alt="Image"> -->
+                              
                             </div>
                             <div class="portfolio-text">
                                 <h3>{{$portfolio->projectname}}</h3>
                                 <a class="btn" href="{{asset('uploads/portfolio/thumb/'.$portfolio->image)}}" data-lightbox="portfolio">+</a>
-                                <!-- <a class="btn"  href="http://salesystem.webactivities.online/" >&#128279;</a> -->
+                               
                                 <a class="btn"  href="{{$portfolio->projectlink}}">~</a>
 
-                                  @endforeach
-                            @endif
+                                
                                 
                             </div>
                         </div>
+                     
+                       
                     </div>
-                  
+                    @endforeach
+                          
                 </div>
             </div>
+           
         </div>
+      
         <!-- <div></div> -->
         <!-- Portfolio End -->
         
@@ -353,31 +359,39 @@
          <div class="price" id="price">
             
         </div> 
+        @endif
         <!-- Price End -->
         
         
         <!-- Testimonial Start -->
+        @if (getTestimonials()->isNotEmpty())
         <div class="testimonial wow fadeInUp" data-wow-delay="0.2s" id="review">
         <!-- <p>Testimonial</p> -->
             <div class="container">
                 <div class="testimonial-icon">
+              
                     <i class="fa fa-quote-left"></i>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
-                  
+                
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-                            <img src="{{asset('front-assets/img/lina.jpg')}}" alt="Image">
+                       
+                        @foreach (getTestimonials() as $testimonial)
+                        @if ($testimonial->image != "")
+                            <img src="{{asset('uploads/testimonial/thumb/'.$testimonial->image)}}"  alt="Image"> 
+                            @endif
+                            <!-- <img src="{{asset('front-assets/img/lina.jpg')}}" alt="Image"> -->
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Kuhaon ka naho sof. tigbunot
+                            {{$testimonial->description}}
                             </p>
-                            <h3>Melchard Lina</h3>
-                            <h4>Game Developer</h4>
+                            <h3> {{$testimonial->name}}</h3>
+                            <h4> {{$testimonial->profession}}</h4>
                         </div>
                     </div>
-                    <div class="testimonial-item">
+                    <!-- <div class="testimonial-item">
                         <div class="testimonial-img">
                             <img src="{{asset('front-assets/img/dexter.jpg')}}" alt="Image">
                         </div>
@@ -388,23 +402,29 @@
                             <h3>Dexter Mano</h3>
                             <h4>Web Designer</h4>
                         </div>
-                    </div>
+                    </div> -->
+                    @endforeach
+                          
                 </div>
             </div>
         </div>
+        @endif
         <!-- Testimonial End -->
 
 
         <!-- Team Start -->
+        @if (getMembers()->isNotEmpty())
         <div class="team" id="team">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                
                     <p>My Team</p>
+                  
+                        @foreach (getMembers() as $member)
                     <h2>Team Members</h2>
                 </div>
                 <div class="row">
-                @if (getMembers()->isNotEmpty())
-                        @foreach (getMembers() as $member)
+             
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="team-item">
                             <div class="team-img">
@@ -429,7 +449,7 @@
                         </div>
                     </div>
                     @endforeach
-                            @endif
+                          
                     <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-item">
                             <div class="team-img">
@@ -450,12 +470,14 @@
                 </div>
             </div>
         </div>
+        @endif
         <!-- Team End -->
 
        
         
         
         <!-- Contact Start -->
+        @if (getContacts()->isNotEmpty())
         <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
             <div class="container-fluid">
                 <div class="container">
@@ -465,7 +487,7 @@
                      
                             <div class="contact-form">
                                 <div id="success"></div>
-                                @if (getContacts()->isNotEmpty())
+                               
                         @foreach (getContacts() as $contact)
                                 
                                 <form name="sentMessage" id="contactForm" novalidate="novalidate">
@@ -490,12 +512,13 @@
                                     </div>
                                 </form>
                                 @endforeach
-                            @endif
+                         
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endif
         <!-- Contact End -->
         @endsection

@@ -66,18 +66,25 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="#home" class="nav-item nav-link active">Home</a>
+                        @if (getProfiles()->isNotEmpty())
                         <a href="#about" class="nav-item nav-link">About</a>
+                      
                         <!-- <a href="#skill" class="nav-item nav-link">Skill</a> -->
-                        <a href="#blog" class="nav-item nav-link">Blog</a>
+                     <a href="#experience" class="nav-item nav-link">Resume</a> 
+                        <a href="#blog" class="nav-item nav-link">Blog</a>  @endif
+                        @if (getServices()->isNotEmpty())
                         <a href="#service" class="nav-item nav-link">Service</a>
-                        <a href="#experience" class="nav-item nav-link">Resume</a>
-                        <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+                        @endif
+                        @if (getPortfolios()->isNotEmpty())
+                        <a href="#portfolio" class="nav-item nav-link">Portfolio</a> @endif
                         <!-- <a href="#price" class="nav-item nav-link">Price</a> -->
-                        <a href="#review" class="nav-item nav-link">Review</a>
-                        <a href="#team" class="nav-item nav-link">Team</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
-                        <a href="#" class="nav-item nav-link" id="login-link">Login</a>
-                        <a href="{{route('account.register')}}" class="nav-item nav-link" id="signup-link">Signup</a>
+                        @if (getTestimonials()->isNotEmpty())
+                        <a href="#review" class="nav-item nav-link">Review</a>@endif
+                        @if (getMembers()->isNotEmpty()) <a href="#team" class="nav-item nav-link">Team</a>@endif
+                        @if (getContacts()->isNotEmpty())  <a href="#contact" class="nav-item nav-link">Contact</a>@endif
+                        <a href="{{route('admin.login')}}" class="nav-item nav-link" id="login-link">Login</a>
+                        <!-- <a href="#" class="nav-item nav-link" id="signup-link">Signup</a> -->
+                          
                     </div>
                 </div>
             </div>
@@ -92,8 +99,9 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="hero-content">
                             <div class="hero-text">
+                            @if (getProfiles()->isNotEmpty())
                                 <p>I'm</p>
-                                @if (getProfiles()->isNotEmpty())
+                              
                         @foreach (getProfiles() as $profile)
                                 <h1>{{$profile->fullname}}</h1>
                                 
@@ -132,11 +140,12 @@
         
 
         <!-- Footer Start -->
+        @if (getProfiles()->isNotEmpty())
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                         @if (getProfiles()->isNotEmpty())
+                        
                         @foreach (getProfiles() as $profile)
                         <h2>{{$profile->fullname}}</h2>
                         <h3>{{$profile->barangay}},{{$profile->municipality}},{{$profile->province}} {{$profile->zipcode}}</h3>
@@ -154,23 +163,26 @@
                             <a href="{{$social->li}}"><i class="fab fa-linkedin-in"></i></a>
                             <a href="{{$social->ig}}"><i class="fab fa-instagram"></i></a>
                             @endforeach
-                            @endif
+                          
                         </div>
                     </div>
                 </div>
+                @endif
+                @if (getProfiles()->isNotEmpty())
                 <div class="container copyright">
-                    <p>&copy; <a href="#">  @if (getProfiles()->isNotEmpty())
+                    <p>&copy; <a href="#"> 
                         @foreach (getProfiles() as $profile) 
                         {{$profile->textlogo}}  
                          @endforeach
-                            @endif</a>, All Right Reserved | Designed By <a href="#">  @if (getProfiles()->isNotEmpty())
+                           </a>, All Right Reserved | Designed By <a href="#">  @endif @if (getProfiles()->isNotEmpty())
                         @foreach (getProfiles() as $profile) 
                         {{$profile->textlogo}}  
                          @endforeach
-                            @endif</a></p>
+                           </a></p>
                 </div>
             </div>
         </div>
+      
         <!-- Footer End -->
         
         
@@ -182,6 +194,7 @@
         <div id="loader" class="show">
             <div class="loader"></div>
         </div>
+        @endif
 
         
         <!-- JavaScript Libraries -->

@@ -53,7 +53,7 @@
 
 									<div class="col-md-6">
 										<div class="mb-3">
-                                        <br><br><br><br>
+                                       
 											<label for="fullname">Full Name</label>
 											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Fullname">	
 											<p></p>

@@ -8,7 +8,7 @@ use App\Models\Social;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Skill;
-use App\Models\Education;
+use App\Models\Educ;
 use App\Models\Experience;
 use App\Models\Testimonial;
 
@@ -61,10 +61,22 @@ function getProfiles(){
      ->get();
  
  }
- function getEducation(){
-    // return Resume::orderBy('id','ASC')
+ function getExperiences(){
+    return Experience::orderBy('id','ASC')
     // ->where('id',1)
-    //  ->get();
+     ->get();
+ 
+ }
+ function getEducations(){
+    return Educ::orderBy('id','ASC')
+    // ->where('id',1)
+     ->get();
+ 
+ }
+ function getTestimonials(){
+    return Testimonial::orderBy('id','ASC')
+     ->where('status',1)
+     ->get();
  
  }
 

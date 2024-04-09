@@ -34,8 +34,8 @@
 									</div>
                                     <div class="col-md-6">
 										<div class="mb-3">
-											<label for="schooladdress">School Address</label>
-											<input type="text" name="schooladdress" id="schooladdress" class="form-control" placeholder="School Address">	
+											<label for="schoolfulladdress">School Address</label>
+											<input type="text" name="schoolfulladdress" id="schoolfulladdress" class="form-control" placeholder="School Address">	
 											<p></p>
 										</div>
 									</div>

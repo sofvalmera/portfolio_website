@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Blog;
 use App\Models\Member;
-use App\Models\Spectator;
+use App\Models\User;
 use App\Models\Portfolio;
 use App\Models\Testimonial;
 
@@ -19,6 +19,8 @@ class HomeController extends Controller
         // $countm = Member::where('role_name', 'Spectator') ->count();
         $countp = Portfolio::count();
         $countb = Blog::count();
+        $countt = Testimonial::count();
+        $countu = User::count();
         // $countt = ::count();
         // Get the count of spectators
         // $spectatorCount = Spectator::count();
@@ -30,6 +32,8 @@ class HomeController extends Controller
             'countm' => $countm,
             'countp' => $countp,
             'countb' => $countb,
+            'countt' => $countt,
+            'countu' => $countu,
         ]);
     }
     public function logout(){

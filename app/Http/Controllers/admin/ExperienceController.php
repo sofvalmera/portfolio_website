@@ -65,22 +65,22 @@ class ExperienceController extends Controller
         }
 
     }
-     public function edit($educationId, Request $request){
+     public function edit($experienceId, Request $request){
 
-        $education=Education::find($educationId);
+        $experience=Experience::find($experienceId);
 
-        if(empty($education)){
-            return redirect()->route('educations.index');
+        if(empty($experience)){
+            return redirect()->route('experiences.index');
         }
-        return view('admin.education.edit',compact('education'));
+        return view('admin.experience.edit',compact('experience'));
 
 
     }
-     public function update($educationId, Request $request){
-        $education=Education::find($educationId);
+     public function update($experienceId, Request $request){
+        $experience=Experience::find($experienceId);
 
-        if(empty($education)){
-            $request->session()->flash('error',' not Found');
+        if(empty($experience)){
+            $request->session()->flash('error','  Found');
             return response()->json([
                 'status' => false,
                 'notFound' => true,
@@ -116,11 +116,11 @@ class ExperienceController extends Controller
         }
 
     }
-     public function destroy($educationId, Request $request){
-        $education=Education::find($educationId);
+     public function destroy($experienceId, Request $request){
+        $experience=Experience::find($experienceId);
 
-        if(empty($education)){
-            $education->session()->flash('error',' not found');
+        if(empty($experience)){
+            $experience->session()->flash('error',' not found');
             return response()->json([
                 'status' => true,
                 'message' => ' not found'
@@ -131,7 +131,7 @@ class ExperienceController extends Controller
 
 
 
-        $education->delete();
+        $experience->delete();
         $request->session()->flash('success',' deleted successfully');
         return response()->json([
             'status' => true,
