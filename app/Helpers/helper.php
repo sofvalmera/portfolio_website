@@ -61,14 +61,23 @@ function getProfiles(){
      ->get();
  
  }
+<<<<<<< HEAD
  function getExperiences(){
+=======
+ function getExperience(){
+>>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
     return Experience::orderBy('id','ASC')
     // ->where('id',1)
      ->get();
  
  }
+<<<<<<< HEAD
  function getEducations(){
     return Educ::orderBy('id','ASC')
+=======
+ function getEducation(){
+    return Education::orderBy('id','ASC')
+>>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
     // ->where('id',1)
      ->get();
  

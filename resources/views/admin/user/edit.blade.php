@@ -54,6 +54,23 @@
 											<p></p>
 										</div>
 									</div>
+<<<<<<< HEAD
+=======
+                                    <div class="col-md-6">
+										<div class="mb-3">
+											<label for="profession"> Profession</label>
+											<input type="text" name="profession" id="profession" class="form-control" placeholder="Profession" value="{{$user->profession}}">	
+											<p></p>
+										</div>
+									</div>
+                                    <div class="col-md-6">
+										<div class="mb-3">
+											<label for="address"> Address</label>
+											<input type="text" name="address" id="address" class="form-control" placeholder="Address"value="{{$user->address}}">	
+											<p></p>
+										</div>
+									</div>
+>>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
                                  
                                     <div class="col-md-6">
 										<div class="mb-3">

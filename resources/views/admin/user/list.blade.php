@@ -50,7 +50,12 @@
 											<th> Name</th>
 											<th>Email</th>
 											<th>Phone</th>
+<<<<<<< HEAD
 											
+=======
+											<th>Profession</th>
+											<th>Address</th>
+>>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
 											
 											
 										
@@ -66,7 +71,12 @@
 											<td>{{$user->name}}</td>
 											<td>{{$user->email}}</td>
 											<td>{{$user->phone}}</td>
+<<<<<<< HEAD
 											
+=======
+											<td>{{$user->profession}}</td>
+											<td>{{$user->address}}</td>
+>>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
 											
 											
 										

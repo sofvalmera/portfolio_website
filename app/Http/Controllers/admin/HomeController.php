@@ -20,7 +20,10 @@ class HomeController extends Controller
         $countp = Portfolio::count();
         $countb = Blog::count();
         $countt = Testimonial::count();
+<<<<<<< HEAD
         $countu = User::count();
+=======
+>>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
         // $countt = ::count();
         // Get the count of spectators
         // $spectatorCount = Spectator::count();
@@ -33,7 +36,10 @@ class HomeController extends Controller
             'countp' => $countp,
             'countb' => $countb,
             'countt' => $countt,
+<<<<<<< HEAD
             'countu' => $countu,
+=======
+>>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
         ]);
     }
     public function logout(){
