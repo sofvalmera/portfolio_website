@@ -1,3 +1,6 @@
+
+
+
 @extends('admin.layouts.app')
 @section('content')
 <!-- Content Header (Page header) -->
@@ -29,7 +32,7 @@
                                     <div class="col-md-6">
 										<div class="mb-3">
 											<label for="name">Name</label>
-											<input type="text" readonly name="name" id="name" class="form-control" placeholder="Name">	
+											<input type="text" name="name" id="name" class="form-control" placeholder="Name">	
 											<p></p>
 										</div>
 									</div>
@@ -47,7 +50,7 @@
                                                     <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description"></textarea>
                                                 </div>
                                             </div>   
-								
+                                            </div>   
                                             <div class="col-md-6">
 										<div class="mb-3">
 											<input type="hidden" id="image_id" name="image_id" value="">
@@ -58,11 +61,11 @@
 											    </div>
 										    </div>
 										</div>
-                                        @if(!empty($profile->image))
+                                        <!-- @if(!empty($blog->image))
                                         <div>
-                                            <img width="250" height="250"  src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="">
+                                            <img width="250" src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="">
                                         </div>
-                                        @endif
+                                        @endif -->
 									</div>	
 									
 									<div class="col-md-6">

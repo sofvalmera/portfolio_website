@@ -15,6 +15,7 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SkillController;
+use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\admin\EducationController;
 use App\Http\Controllers\admin\ExperienceController;
 use App\Http\Controllers\FrontController;
@@ -43,6 +44,10 @@ Route::group(['prefix' => 'account'],function(){
     Route::group(['middleware' => 'guest'],function(){
 
    Route::get('/login',[AuthController::class,'login'])->name('account.login');
+   Route::get('/login',[AuthController::class,'authenticate'])->name('account.authenticate');
+
+
+
     Route::get('/register',[AuthController::class,'register'])->name('account.register');
     Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
 
@@ -76,7 +81,7 @@ Route::group(['prefix' => 'admin'],function(){
 
             // profile route
             Route::get('/profiles',[ProfileController::class,'index'])->name('profiles.index');
-            Route::get('/profiles/create',[ProfileController::class,'create'])->name('profiles.create');
+            Route::get('/profiles/createdsasdaDDSAdefwJEhqgxgaygqytSUQISYFatsAS',[ProfileController::class,'create'])->name('profiles.create');
            Route::post('/profiles',[ProfileController::class,'store'])->name('profiles.store');
            Route::get('/profiles/{profile}/edit',[ProfileController::class,'edit'])->name('profiles.edit');
            Route::put('/profiles/{profile}',[ProfileController::class,'update'])->name('profiles.update');
@@ -84,7 +89,7 @@ Route::group(['prefix' => 'admin'],function(){
 
               // Contact route
               Route::get('/contacts',[ContactController::class,'index'])->name('contacts.index');
-              Route::get('/contacts/create',[ContactController::class,'create'])->name('contacts.create');
+              Route::get('/contacts/createahsdAGDJGYfdwtyqfdqdfftqfdytqdw',[ContactController::class,'create'])->name('contacts.create');
              Route::post('/contacts',[ContactController::class,'store'])->name('contacts.store');
              Route::get('/contacts/{contact}/edit',[ContactController::class,'edit'])->name('contacts.edit');
              Route::put('/contacts/{contact}',[ContactController::class,'update'])->name('contacts.update');
@@ -99,6 +104,15 @@ Route::group(['prefix' => 'admin'],function(){
            Route::get('/blogs/{blog}/edit',[BlogController::class,'edit'])->name('blogs.edit');
            Route::put('/blogs/{blog}',[BlogController::class,'update'])->name('blogs.update');
            Route::delete('/blogs/{blog}',[BlogController::class,'destroy'])->name('blogs.delete');
+
+             //testimonial route ni
+             Route::get('/testimonials',[TestimonialController::class,'index'])->name('testimonials.index');
+             Route::get('/testimonials/create',[TestimonialController::class,'create'])->name('testimonials.create');
+            Route::post('/testimonials',[TestimonialController::class,'store'])->name('testimonials.store');
+            Route::get('/testimonials/{testimonial}/edit',[TestimonialController::class,'edit'])->name('testimonials.edit');
+            Route::put('/testimonials/{testimonial}',[TestimonialController::class,'update'])->name('testimonials.update');
+            Route::delete('/testimonials/{testimonial}',[TestimonialController::class,'destroy'])->name('testimonials.delete');
+ 
 
              
             //experience route ni
@@ -127,9 +141,17 @@ Route::group(['prefix' => 'admin'],function(){
              Route::put('/skills/{skill}',[SkillController::class,'update'])->name('skills.update');
              Route::delete('/skills/{skill}',[SkillController::class,'destroy'])->name('skills.delete');
 
+               //users
+               Route::get('/users',[UserController::class,'index'])->name('users.index');
+               Route::get('/users/create',[UserController::class,'create'])->name('users.create');
+              Route::post('/users',[UserController::class,'store'])->name('users.store');
+              Route::get('/users/{user}/edit',[UserController::class,'edit'])->name('users.edit');
+              Route::put('/users/{user}',[UserController::class,'update'])->name('users.update');
+              Route::delete('/users/{user}',[UserController::class,'destroy'])->name('users.delete');
+
            //member route ni
            Route::get('/members',[MemberController::class,'index'])->name('members.index');
-           Route::get('/members/create',[MemberController::class,'create'])->name('members.create');
+           Route::get('/members/createDSAHJDSADhdgahdygwggdywfwdwvdgwfe',[MemberController::class,'create'])->name('members.create');
           Route::post('/members',[MemberController::class,'store'])->name('members.store');
           Route::get('/members/{member}/edit',[MemberController::class,'edit'])->name('members.edit');
           Route::put('/members/{member}',[MemberController::class,'update'])->name('members.update');

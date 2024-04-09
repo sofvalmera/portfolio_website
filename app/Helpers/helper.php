@@ -73,6 +73,12 @@ function getProfiles(){
      ->get();
  
  }
+ function getTestimonials(){
+    return Testimonial::orderBy('id','ASC')
+     ->where('status',1)
+     ->get();
+ 
+ }
 
 
 ?>

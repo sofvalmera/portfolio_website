@@ -77,7 +77,8 @@
                         <a href="#team" class="nav-item nav-link">Team</a>
                         <a href="#contact" class="nav-item nav-link">Contact</a>
                         <a href="#" class="nav-item nav-link" id="login-link">Login</a>
-                        <a href="{{route('account.register')}}" class="nav-item nav-link" id="signup-link">Signup</a>
+                        <a href="#" class="nav-item nav-link" id="signup-link">Signup</a>
+                          <!-- <a href="{{route('account.register')}}" class="nav-item nav-link" id="signup-link">Signup</a> -->
                     </div>
                 </div>
             </div>

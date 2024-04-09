@@ -24,10 +24,11 @@
 			  	</div>
 			  	<div class="card-body">
 					<p class="login-box-msg">Sign in to start your session</p>
-					<form action="{{route('admin.authenticate')}}" method="post">
+					<form action="{{route('admin.authenticate')}}" name="login" id="login" method="post">
 						@csrf
 				  		<div class="input-group mb-3">
-							<input type="email" name="email" id="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+							<input type="email" name="email" id="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" required placeholder="Email">
+							<p></p>
 							<div class="input-group-append">
 					  			<div class="input-group-text">
 									<span class="fas fa-envelope"></span>
@@ -38,7 +39,8 @@
 				  		<p class="invalid-feedback">{{$message}}</p>
 				  		@enderror
 				  		<div class="input-group mb-3">
-							<input type="password" name="password" id="password" value="{{old('password')}}" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+							<input type="password" name="password" id="password" value="{{old('password')}}" required class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+							<p></p>
 							<div class="input-group-append">
 					  			<div class="input-group-text">
 									<span class="fas fa-lock"></span>
@@ -72,6 +74,9 @@
 			</div>
 			<!-- /.card -->
 		</div>
+
+		<script>
+	
 		<!-- ./wrapper -->
 		<!-- jQuery -->
 		<script src="{{asset('login/admin-assets/plugins/jquery/jquery.min.js')}}"></script>

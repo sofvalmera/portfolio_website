@@ -19,6 +19,7 @@ class HomeController extends Controller
         // $countm = Member::where('role_name', 'Spectator') ->count();
         $countp = Portfolio::count();
         $countb = Blog::count();
+        $countt = Testimonial::count();
         // $countt = ::count();
         // Get the count of spectators
         // $spectatorCount = Spectator::count();
@@ -30,6 +31,7 @@ class HomeController extends Controller
             'countm' => $countm,
             'countp' => $countp,
             'countb' => $countb,
+            'countt' => $countt,
         ]);
     }
     public function logout(){

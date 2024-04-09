@@ -331,8 +331,8 @@
         </div>
         <!-- Job Experience End -->
         
-        
-       
+          <!-- <img src="{{asset('front-assets/img/sales.png')}}"  alt="Image"> -->
+           <!-- <a class="btn"  href="http://salesystem.webactivities.online/" >&#128279;</a> -->
 
 
         <!-- Portfolio Start -->
@@ -343,33 +343,39 @@
                     <h2>My Works</h2>
                 </div>
               
+                
                 <div class="row portfolio-container">
+                @if (getPortfolios()->isNotEmpty())
+                        @foreach (getPortfolios() as $portfolio)
                     <div  class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                  
                         <div class="portfolio-wrap">
                        
                             <div class="portfolio-img">
-                            @if (getPortfolios()->isNotEmpty())
-                        @foreach (getPortfolios() as $portfolio)
+                           
                             @if ($portfolio->image != "")
                             <img width="20" height="20" src="{{asset('uploads/portfolio/thumb/'.$portfolio->image)}}" alt="" class="img-fluid">
                             @endif
-                                <!-- <img src="{{asset('front-assets/img/sales.png')}}"  alt="Image"> -->
+                              
                             </div>
                             <div class="portfolio-text">
                                 <h3>{{$portfolio->projectname}}</h3>
                                 <a class="btn" href="{{asset('uploads/portfolio/thumb/'.$portfolio->image)}}" data-lightbox="portfolio">+</a>
-                                <!-- <a class="btn"  href="http://salesystem.webactivities.online/" >&#128279;</a> -->
+                               
                                 <a class="btn"  href="{{$portfolio->projectlink}}">~</a>
 
-                                  @endforeach
-                            @endif
+                                
                                 
                             </div>
                         </div>
+                     
+                       
                     </div>
-                  
+                    @endforeach
+                            @endif
                 </div>
             </div>
+           
         </div>
         <!-- <div></div> -->
         <!-- Portfolio End -->
@@ -393,20 +399,25 @@
                     <i class="fa fa-quote-left"></i>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
-                  
+                
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-                            <img src="{{asset('front-assets/img/lina.jpg')}}" alt="Image">
+                        @if (getTestimonials()->isNotEmpty())
+                        @foreach (getTestimonials() as $testimonial)
+                        @if ($testimonial->image != "")
+                            <img src="{{asset('uploads/testimonial/thumb/'.$testimonial->image)}}"  alt="Image"> 
+                            @endif
+                            <!-- <img src="{{asset('front-assets/img/lina.jpg')}}" alt="Image"> -->
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Kuhaon ka naho sof. tigbunot
+                            {{$testimonial->description}}
                             </p>
-                            <h3>Melchard Lina</h3>
-                            <h4>Game Developer</h4>
+                            <h3> {{$testimonial->name}}</h3>
+                            <h4> {{$testimonial->profession}}</h4>
                         </div>
                     </div>
-                    <div class="testimonial-item">
+                    <!-- <div class="testimonial-item">
                         <div class="testimonial-img">
                             <img src="{{asset('front-assets/img/dexter.jpg')}}" alt="Image">
                         </div>
@@ -417,7 +428,9 @@
                             <h3>Dexter Mano</h3>
                             <h4>Web Designer</h4>
                         </div>
-                    </div>
+                    </div> -->
+                    @endforeach
+                            @endif
                 </div>
             </div>
         </div>
