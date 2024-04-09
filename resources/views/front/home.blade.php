@@ -373,11 +373,11 @@
                     <i class="fa fa-quote-left"></i>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
-                
+                @foreach (getTestimonials() as $testimonial)
+                      
                     <div class="testimonial-item">
                         <div class="testimonial-img">
                        
-                        @foreach (getTestimonials() as $testimonial)
                         @if ($testimonial->image != "")
                             <img src="{{asset('uploads/testimonial/thumb/'.$testimonial->image)}}"  alt="Image"> 
                             @endif
