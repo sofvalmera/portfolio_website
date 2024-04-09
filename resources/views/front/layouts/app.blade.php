@@ -78,7 +78,6 @@
                         @if (getPortfolios()->isNotEmpty())
                         <a href="#portfolio" class="nav-item nav-link">Portfolio</a> @endif
                         <!-- <a href="#price" class="nav-item nav-link">Price</a> -->
-<<<<<<< HEAD
                         @if (getTestimonials()->isNotEmpty())
                         <a href="#review" class="nav-item nav-link">Review</a>@endif
                         @if (getMembers()->isNotEmpty()) <a href="#team" class="nav-item nav-link">Team</a>@endif
@@ -86,14 +85,6 @@
                         <a href="{{route('admin.login')}}" class="nav-item nav-link" id="login-link">Login</a>
                         <!-- <a href="#" class="nav-item nav-link" id="signup-link">Signup</a> -->
                           
-=======
-                        <a href="#review" class="nav-item nav-link">Review</a>
-                        <a href="#team" class="nav-item nav-link">Team</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
-                        <a href="#" class="nav-item nav-link" id="login-link">Login</a>
-                        <a href="#" class="nav-item nav-link" id="signup-link">Signup</a>
-                          <!-- <a href="{{route('account.register')}}" class="nav-item nav-link" id="signup-link">Signup</a> -->
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
                     </div>
                 </div>
             </div>

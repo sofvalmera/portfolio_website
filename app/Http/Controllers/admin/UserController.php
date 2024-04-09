@@ -48,12 +48,7 @@ class UserController extends Controller
             $user->email = $request->email;
             $user->password = $request->password;
             $user->phone = $request->phone;
-<<<<<<< HEAD
            
-=======
-            $user->address = $request->address;
-            $user->profession = $request->profession;
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
             $user->role = $request->role;
             
             $user->save();
@@ -108,12 +103,7 @@ class UserController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->phone = $request->phone;
-<<<<<<< HEAD
          
-=======
-            $user->address = $request->address;
-            $user->profession = $request->profession;
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
             $user->role = $request->role;
             $user->password = $request->password;
             $user->save();

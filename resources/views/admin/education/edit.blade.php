@@ -6,10 +6,10 @@
 						@include('admin.message')
 						<div class="row mb-2">
 							<div class="col-sm-6">
-								<h1>Edit Blog</h1>
+								<h1>Edit Experience</h1>
 							</div>
 							<div class="col-sm-6 text-right">
-								<a href="{{route('blogs.index')}}" class="btn btn-primary">Back</a>
+								<a href="{{route('educations.index')}}" class="btn btn-primary">Back</a>
 							</div>
 						</div>
 					</div>
@@ -19,71 +19,46 @@
 				<section class="content">
 					<!-- Default box -->
 					<div class="container-fluid">
-						<form action="{{route('blogs.store')}}" method="get" id="editblogForm" name="editblogForm" >
+						<form action="{{route('educations.store')}}" method="get" id="editblogForm" name="editblogForm" >
 						@csrf
 						
+
+
+                    
+
+
 						<div class="card">
 							<div class="card-body">								
 								<div class="row">
                                 <div class="col-md-6">
 										<div class="mb-3">
-											<label for="title">Title</label>
-											<input type="text" name="title" id="title" class="form-control" placeholder="Title" value="{{$blog->title}}">	
+											<label for="School Name">School Name</label>
+											<input type="text" name="schoolname" id="schoolname" class="form-control" placeholder="School Name" value="{{$education->schoolname}}">	
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
-											<label for="name">Author</label>
-											<input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{$blog->name}}">	
+											<label for="schoolfulladdress">School Address</label>
+											<input type="text" name="schoolfulladdress" id="schoolfulladdress" class="form-control" placeholder="School Address" value="{{$education->schoolfulladdress}}">	
 										</div>
 									</div>
                                     <div class="col-md-6">
 										<div class="mb-3">
-											<label for="project">Project Name</label>
-											<input type="text" name="project" id="project" class="form-control" placeholder="Project" value="{{$blog->project}}">	
-										</div>
-									</div>
-                                    <div class="col-md-6">
-										<div class="mb-3">
-											<label for="date">Published Date</label>
-											<input type="date" name="date" id="date" class="form-control" placeholder="Date" value="{{$blog->date}}">	
+											<label for="schoolyear">School Year</label>
+											<input type="text" name="schoolyear" id="schoolyear" class="form-control" placeholder="School Year" value="{{$education->schoolyear}}">	
 										</div>
 									</div>
                                     <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="description">Description</label>
-                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$blog->description}}</textarea>
+                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$education->description}}</textarea>
                                                 </div>
                                             </div>                                            
 									
 		
 									
 									</div>
-									<div class="col-md-6">
-										<div class="mb-3">
-											<input type="hidden" id="image_id" name="image_id" value="">
-											<label for="image">Image</label>
-											<div id="image" class="dropzone dz-clickable">
-												<div class="dz-message needsclick">
-												<br>Drop files here or click to upload.<br><br>
-											    </div>
-										    </div>
-										</div>
-                                        @if(!empty($blog->image))
-                                        <div>
-                                            <img width="250" height="250"  src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="">
-                                        </div>
-                                        @endif
-									</div>	
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="status">Status</label>
-											<select name="status" id="status" class="form-control" >
-												<option {{($blog->status == 1) ? 'selected' : '' }} value="1">Active</option>
-												<option {{($blog->status == 0) ? 'selected' : '' }} value="0">Block</option>
-											</select>
-										</div>
-									</div>	
+								
 
 																			
 								</div>
@@ -91,7 +66,7 @@
 						</div>
 						<div class="pb-5 pt-3">
 							<button type="submit" class="btn btn-primary">Update</button>
-							<a href="{{route('blogs.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
+							<a href="{{route('educations.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
 						</div>
 						</form>
 					</div>
@@ -107,7 +82,7 @@
 		var element =$(this);
 		$("button[type=submit]").prop('disable',true);
 		$.ajax({
-			url: '{{ route("blogs.update",$blog->id) }}',
+			url: '{{ route("educations.update",$education->id) }}',
 			type: 'put',
 			data: element.serializeArray(),
 			dataType:'json',
@@ -116,78 +91,17 @@
 
 				if(response["status"] == true){
 
-					window.location.href="{{route('blogs.index')}}";
-					$("#title").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-
-                    $("#name").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-
-                    $("#project").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-
-                    $("#date").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-
+					window.location.href="{{route('educations.index')}}";
+					
 					
 				}else {
                         if(response['notFound'] == true){
-                            window.location.href="{{route('blogs.index')}}";
+                            window.location.href="{{route('educations.index')}}";
 
                         }
 
 					var errors = response['errors'];
-				if(errors['title']){
-					$("#title").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['title']);
-				} else{
-					$("#title").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
-
-                if(errors['name']){
-					$("#name").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['name']);
-				} else{
-					$("#name").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
-                if(errors['project']){
-					$("#project").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['project']);
-				} else{
-					$("#project").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
-                if(errors['date']){
-					$("#date").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['date']);
-				} else{
-					$("#date").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
-
-                
+				
 				
 
 				}
@@ -202,28 +116,7 @@
 	
 
 
-	Dropzone.autoDiscover = false;
-	const dropzone =$("#image").dropzone({
-		init: function(){
-			this.on('addedfile',function(file){
-			if (this.files.length > 1){
-				this.removeFile(this.files[0]);
-			
-		}
-	});
-},
-url: "{{route ('temp-images.create')}}",
-maxFiles: 1,
-paramName: 'image',
-addRemoveLinks:true,
-acceptedFiles:"image/jpeg,image/png,image/gif",
-headers:{
-	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-}, success: function(file,response){
-	$("#image_id").val(response.image_id);
-	//console.log(response)
-}
-});
+	
 
 	
 </script>

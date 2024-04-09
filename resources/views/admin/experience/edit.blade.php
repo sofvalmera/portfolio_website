@@ -38,13 +38,13 @@
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
-											<label for="experienceaddress">Author</label>
+											<label for="experienceaddress">Address</label>
 											<input type="text" name="experienceaddress" id="experienceaddress" class="form-control" placeholder="Name" value="{{$experience->experienceaddress}}">	
 										</div>
 									</div>
                                     <div class="col-md-6">
 										<div class="mb-3">
-											<label for="experienceyear">Project Name</label>
+											<label for="experienceyear">Year</label>
 											<input type="text" name="experienceyear" id="experienceyear" class="form-control" placeholder="Project" value="{{$experience->experienceyear}}">	
 										</div>
 									</div>

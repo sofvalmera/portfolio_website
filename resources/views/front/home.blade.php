@@ -298,133 +298,7 @@
         @endif
         <!-- Service End -->
         
-<<<<<<< HEAD
        
-=======
-        
-         <!-- Experience Start -->
-        <div class="experience" id="experience">
-            <div class="container">
-                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>My Resume</p>
-                    <h2>Education</h2>
-                </header>
-
-                <div class="timeline">
-    @foreach (getExperience() as $key => $experience)
-        <div class="timeline-item {{ $key % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $key % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
-            <div class="timeline-text">
-                <div class="timeline-date">{{ $experience->experienceyearear }} </div>
-                <h2>experiencename</h2>
-                <h4>{{ $experience->experienceaddress }}</h4>
-                <p>{{ $experience->experiencedescription }}</p>
-               
-            </div>
-        </div>
-    @endforeach
-</div>
-              
-
-                <!-- <div class="timeline">
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2021 - 2024</div>
-                            <h2>MLG COLLEGE OF LEARNING INC. - (MLG INC.)</h2>
-                            <h4>Brgy. Atabay Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                            Bachelor of Science in Information Technology (BSIT)<br>
-                            Major in Web Developing
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2019 - 2021</div>
-                            <h2>BUNG-AW NATIONAL HIGH SCHOOL - (BNHS-Senior High)</h2>
-                            <h4>Brgy. Bung-aw Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                                Information and Communication Technology (ICT)<br>
-                                Major in Web Developing
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                        <div class="timeline-date">2015 - 2019</div>
-                            <h2>BUNG-AW NATIONAL HIGH SCHOOL - (BNHS-Junior High)</h2>
-                            <h4>Brgy. Bung-aw Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                                Most Resourceful<br>
-                                Most Resourceful
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2009 - 2015</div>
-                            <h2>BUNG-AW ELEMENTARY SCHOOL - (BES)</h2>
-                            <h4>Brgy. Bung-aw Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                                Most Resourceful<br>
-                                Most Resourceful
-                            </p>
-                        </div>
-                    </div> -->
-
-            </div>
-        </div>
-        <div class="container">
-                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <h2>Experience</h2>
-                </header>
-                <div class="timeline">
-    @foreach (getExperience() as $key => $experience)
-        <div class="timeline-item {{ $key % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $key % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
-            <div class="timeline-text">
-                <div class="timeline-date">{{ $experience->experienceyearear }} </div>
-                <h2>experiencename</h2>
-                <h4>{{ $experience->experienceaddress }}</h4>
-                <p>{{ $experience->experiencedescription }}</p>
-               
-            </div>
-        </div>
-    @endforeach
-</div>
-                <!-- <div class="timeline">
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                             <div class="timeline-date">2021 - 2024</div>
-                            <h2>Web Developer</h2>
-                            <h4>Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                            Frontend Development<br>
-                            Backend Development<br>
-                            Responsive Web Design
-                                
-                            </p>
-                        </div>
-                           
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                        <div class="timeline-date">2019 - 2020</div>
-                            <h2>Graphic Designer</h2>
-                            <h4>Hilongos, Leyte 6524 Philippines</h4>
-                            <p>
-                            Video Editing<br>
-                            Photo Editing
-                           
-                            </p>
-                        </div>
-                           
-                    </div>
-                    -->
-                   
-
-            </div>
-        </div>
-        <!-- Job Experience End -->
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
         
           <!-- <img src="{{asset('front-assets/img/sales.png')}}"  alt="Image"> -->
            <!-- <a class="btn"  href="http://salesystem.webactivities.online/" >&#128279;</a> -->
@@ -441,11 +315,7 @@
               
                 
                 <div class="row portfolio-container">
-<<<<<<< HEAD
                
-=======
-                @if (getPortfolios()->isNotEmpty())
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
                         @foreach (getPortfolios() as $portfolio)
                     <div  class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
                   
@@ -472,11 +342,7 @@
                        
                     </div>
                     @endforeach
-<<<<<<< HEAD
                           
-=======
-                            @endif
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
                 </div>
             </div>
            
@@ -510,11 +376,7 @@
                 
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-<<<<<<< HEAD
                        
-=======
-                        @if (getTestimonials()->isNotEmpty())
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
                         @foreach (getTestimonials() as $testimonial)
                         @if ($testimonial->image != "")
                             <img src="{{asset('uploads/testimonial/thumb/'.$testimonial->image)}}"  alt="Image"> 
@@ -542,11 +404,7 @@
                         </div>
                     </div> -->
                     @endforeach
-<<<<<<< HEAD
                           
-=======
-                            @endif
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
                 </div>
             </div>
         </div>
@@ -561,11 +419,7 @@
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                 
                     <p>My Team</p>
-<<<<<<< HEAD
                   
-=======
-                    @if (getMembers()->isNotEmpty())
->>>>>>> 1c8fc5becd1de79aa92641d21eb77b208990e4d5
                         @foreach (getMembers() as $member)
                     <h2>Team Members</h2>
                 </div>
