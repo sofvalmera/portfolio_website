@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class RedirectIfAuthenticated
+class SpectatorRedirectIfAuthenticated
 {
     
     public function handle(Request $request, Closure $next, string ...$guards): Response

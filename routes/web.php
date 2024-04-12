@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\admin\AdminLogInController;
+use App\Http\Controllers\spectator\SpectatorLogInController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\spectator\SpectatorHomeController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\PortfolioController;
@@ -16,6 +18,7 @@ use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SkillController;
 use App\Http\Controllers\admin\TestimonialController;
+use App\Http\Controllers\spectator\SpectatorTestimonialController;
 use App\Http\Controllers\admin\EducationController;
 use App\Http\Controllers\admin\ExperienceController;
 use App\Http\Controllers\FrontController;
@@ -40,22 +43,47 @@ use App\Http\Controllers\admin\TempImageController;
 Route::get('/',[FrontController::class,'index'])->name('front.home');
 
 
-Route::group(['prefix' => 'account'],function(){
-    Route::group(['middleware' => 'guest'],function(){
+// Route::group(['prefix' => 'account'],function(){
+//     Route::group(['middleware' => 'guest'],function(){
 
-   Route::get('/login',[AuthController::class,'login'])->name('account.login');
-   Route::get('/login',[AuthController::class,'authenticate'])->name('account.authenticate');
+//    Route::get('/login',[AuthController::class,'login'])->name('account.login');
+//    Route::get('/login',[AuthController::class,'authenticate'])->name('account.authenticate');
 
 
 
-    Route::get('/register',[AuthController::class,'register'])->name('account.register');
-    Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
+//     Route::get('/register',[AuthController::class,'register'])->name('account.register');
+//     Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
 
+//        });
+//         Route::group(['middleware' => 'auth'],function(){
+
+//         });
+//     });
+
+Route::group(['prefix' => 'spectator'],function(){
+   Route::group(['middleware' => 'spectator.guest'],function(){
+
+  Route::get('/login',[SpectatorLogInController::class,'spectatorindex'])->name('spectator.login');
+
+   Route::post('/spectatorauthenticate',[SpectatorLogInController::class,'spectatorauthenticate'])->name('spectator.spectatorauthenticate');
+
+      });
+       Route::group(['middleware' => 'spectator.auth'],function(){
+
+          
+        Route::get('/dash',[SpectatorHomeController::class,'spectatorindex'])->name('spectator.dashboard');
+        Route::get('/logout',[SpectatorHomeController::class,'spectatorlogout'])->name('spectator.logout');
+
+        Route::get('/testimonials',[SpectatorTestimonialController::class,'index'])->name('spectatortestimonials.index');
+        Route::get('/testimonials/create',[SpectatorTestimonialController::class,'create'])->name('spectatortestimonials.create');
+       Route::post('/testimonials',[SpectatorTestimonialController::class,'store'])->name('spectatortestimonials.store');
+       Route::get('/testimonials/{testimonial}/edit',[SpectatorTestimonialController::class,'edit'])->name('spectatortestimonials.edit');
+       Route::put('/testimonials/{testimonial}',[SpectatorTestimonialController::class,'update'])->name('spectatortestimonials.update');
+       Route::delete('/testimonials/{testimonial}',[SpectatorTestimonialController::class,'destroy'])->name('spectatortestimonials.delete');
        });
-        Route::group(['middleware' => 'auth'],function(){
+      });
+      
 
-        });
-    });
 
 Route::group(['prefix' => 'admin'],function(){
     Route::group(['middleware' => 'admin.guest'],function(){
@@ -65,11 +93,8 @@ Route::group(['prefix' => 'admin'],function(){
     Route::post('/authenticate',[AdminLoginController::class,'authenticate'])->name('admin.authenticate');
 
        });
-        Route::group(['middleware' => 'admin.auth'],function(){
-
-           
-             
-           
+       
+         Route::group(['middleware' => 'admin.auth'],function(){
 
            Route::get('/dashboard',[HomeController::class,'index'])->name('admin.dashboard');
 

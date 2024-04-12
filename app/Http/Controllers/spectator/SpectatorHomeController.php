@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\spectator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,16 +11,17 @@ use App\Models\User;
 use App\Models\Portfolio;
 use App\Models\Testimonial;
 
-class HomeController extends Controller
+class SpectatorHomeController extends Controller
 {
-     public function index()
+    
+    public function spectatorindex()
     {
-        $countm = Member::count();
+        // $countm = Member::count();
         // $countm = Member::where('role_name', 'Spectator') ->count();
-        $countp = Portfolio::count();
-        $countb = Blog::count();
+        // $countp = Portfolio::count();
+        // $countb = Blog::count();
         $countt = Testimonial::count();
-        $countu = User::count();
+        // $countu = User::count();
         // $countt = ::count();
         // Get the count of spectators
         // $spectatorCount = Spectator::count();
@@ -28,18 +29,16 @@ class HomeController extends Controller
         // Get the count of users
         // $userCount = User::count();
 
-        return view('admin.dashboard', [
-            'countm' => $countm,
-            'countp' => $countp,
-            'countb' => $countb,
+        return view('spectator.dashboard', [
+          
             'countt' => $countt,
-            'countu' => $countu,
+           
         ]);
     }
    
-   
-    public function logout(){
-         Auth::guard('admin')->logout();
-         return redirect()->route('admin.login');
-    }
+  
+    public function spectatorlogout(){
+        Auth::guard('spectator')->logout();
+        return redirect()->route('spectator.login');
+   }
 }

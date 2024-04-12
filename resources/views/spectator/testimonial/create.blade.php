@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('spectator.layouts.app')
 @section('content')
 <!-- Content Header (Page header) -->
 				<section class="content-header">					
@@ -9,7 +9,7 @@
 								<h1>Create Testimonials</h1>
 							</div>
 							<div class="col-sm-6 text-right">
-								<a href="{{route('testimonials.index')}}" class="btn btn-primary">Back</a>
+								<a href="{{route('spectatortestimonials.index')}}" class="btn btn-primary">Back</a>
 							</div>
 						</div>
 					</div>
@@ -29,7 +29,7 @@
                                     <div class="col-md-6">
 										<div class="mb-3">
 											<label for="name">Name</label>
-											<input type="text" readonly name="name" id="name" class="form-control" placeholder="Name">	
+											<input type="text" readonly name="name" id="name" class="form-control" value="{{Auth::guard('spectator')->user()->name}}">	
 											<p></p>
 										</div>
 									</div>
@@ -65,25 +65,14 @@
                                         @endif
 									</div>	
 									
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="status">Status</label>
-											<select name="status" id="status" class="form-control" >
-												
-												<option value="0">Block</option>
-                                                <option  value="1">Active</option>
-
-											</select>
-										</div>
-									</div>	
-
+								
 																			
 								</div>
 							</div>							
 						</div>
 						<div class="pb-5 pt-3">
 							<button type="submit" class="btn btn-primary">create</button>
-							<a href="{{route('testimonials.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
+							<a href="{{route('spectatortestimonials.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
 						</div>
 						</form>
 					</div>
@@ -101,7 +90,7 @@
 
 		$("button[type=submit]").prop('disable',true);
 		$.ajax({
-			url: '{{ route("testimonials.store") }}',
+			url: '{{ route("spectatortestimonials.store") }}',
 			type: 'post',
 			data: element.serializeArray(),
 			dataType:'json',
@@ -110,7 +99,7 @@
 
 				if(response["status"] == true){
 
-					window.location.href="{{route('testimonials.index')}}";
+					window.location.href="{{route('spectatortestimonials.index')}}";
 					
 					// $("#title").removeClass('is-invalid')
 					// .siblings('p')
@@ -135,7 +124,7 @@
 					
 				}else {
                         if(response['notFound'] == true){
-                            window.location.href="{{route('testimonials.index')}}";
+                            window.location.href="{{route('spectatortestimonials.index')}}";
 
                         }
 

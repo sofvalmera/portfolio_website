@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'spectator' => [
+            'driver' => 'session',
+            'provider' => 'spectators',
+        ],
     ],
 
 
@@ -70,6 +74,10 @@ return [
             'model' => App\Models\User::class,
         ],
         'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+        'spectators' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],

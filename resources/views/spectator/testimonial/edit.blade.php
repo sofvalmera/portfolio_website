@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('spectator.layouts.app')
 @section('content')
 <!-- Content Header (Page header) -->
 				<section class="content-header">					
@@ -6,10 +6,10 @@
 						@include('admin.message')
 						<div class="row mb-2">
 							<div class="col-sm-6">
-								<h1>Edit Blog</h1>
+								<h1>Edit Testimonial</h1>
 							</div>
 							<div class="col-sm-6 text-right">
-								<a href="{{route('blogs.index')}}" class="btn btn-primary">Back</a>
+								<a href="{{route('spectatortestimonials.index')}}" class="btn btn-primary">Back</a>
 							</div>
 						</div>
 					</div>
@@ -19,46 +19,31 @@
 				<section class="content">
 					<!-- Default box -->
 					<div class="container-fluid">
-						<form action="{{route('blogs.store')}}" method="get" id="editblogForm" name="editblogForm" >
+						<form action="{{route('spectatortestimonials.store')}}" method="get" id="editblogForm" name="editblogForm" >
 						@csrf
 						
 						<div class="card">
 							<div class="card-body">								
 								<div class="row">
-                                <div class="col-md-6">
-										<div class="mb-3">
-											<label for="title">Title</label>
-											<input type="text" name="title" id="title" class="form-control" placeholder="Title" value="{{$blog->title}}">	
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="name">Author</label>
-											<input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{$blog->name}}">	
-										</div>
-									</div>
+                             
+									
                                     <div class="col-md-6">
 										<div class="mb-3">
-											<label for="project">Project Name</label>
-											<input type="text" name="project" id="project" class="form-control" placeholder="Project" value="{{$blog->project}}">	
+											<label for="profession">Profession</label>
+											<input type="text" name="profession" id="profession" class="form-control" placeholder="Profession" value="{{$testimonial->profession}}">	
 										</div>
 									</div>
-                                    <div class="col-md-6">
-										<div class="mb-3">
-											<label for="date">Published Date</label>
-											<input type="date" name="date" id="date" class="form-control" placeholder="Date" value="{{$blog->date}}">	
-										</div>
-									</div>
+                                   
                                     <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="description">Description</label>
-                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$blog->description}}</textarea>
+                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$testimonial->description}}</textarea>
                                                 </div>
-                                            </div>                                            
+                                    </div>                                            
 									
 		
 									
-									</div>
+									
 									<div class="col-md-6">
 										<div class="mb-3">
 											<input type="hidden" id="image_id" name="image_id" value="">
@@ -69,21 +54,13 @@
 											    </div>
 										    </div>
 										</div>
-                                        @if(!empty($blog->image))
+                                        @if(!empty($testimonial->image))
                                         <div>
-                                            <img width="250" height="250"  src="{{asset('uploads/blog/thumb/'.$blog->image)}}" alt="">
+                                            <img width="250" height="250"  src="{{asset('uploads/testimonial/thumb/'.$testimonial->image)}}" alt="">
                                         </div>
                                         @endif
 									</div>	
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="status">Status</label>
-											<select name="status" id="status" class="form-control" >
-												<option {{($blog->status == 1) ? 'selected' : '' }} value="1">Active</option>
-												<option {{($blog->status == 0) ? 'selected' : '' }} value="0">Block</option>
-											</select>
-										</div>
-									</div>	
+									
 
 																			
 								</div>
@@ -91,7 +68,7 @@
 						</div>
 						<div class="pb-5 pt-3">
 							<button type="submit" class="btn btn-primary">Update</button>
-							<a href="{{route('blogs.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
+							<a href="{{route('spectatortestimonials.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
 						</div>
 						</form>
 					</div>
@@ -107,7 +84,7 @@
 		var element =$(this);
 		$("button[type=submit]").prop('disable',true);
 		$.ajax({
-			url: '{{ route("blogs.update",$blog->id) }}',
+			url: '{{ route("spectatortestimonials.update",$testimonial->id) }}',
 			type: 'put',
 			data: element.serializeArray(),
 			dataType:'json',
@@ -116,23 +93,8 @@
 
 				if(response["status"] == true){
 
-					window.location.href="{{route('blogs.index')}}";
-					$("#title").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-
-                    $("#name").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-
-                    $("#project").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-
-                    $("#date").removeClass('is-invalid')
+					window.location.href="{{route('spectatortestimonials.index')}}";
+				    $("#description").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
 					.html("");
@@ -140,52 +102,24 @@
 					
 				}else {
                         if(response['notFound'] == true){
-                            window.location.href="{{route('blogs.index')}}";
+                            window.location.href="{{route('spectatortestimonials.index')}}";
 
                         }
 
 					var errors = response['errors'];
-				if(errors['title']){
-					$("#title").addClass('is-invalid')
+				
+                    if(errors['description']){
+					$("#description").addClass('is-invalid')
 					.siblings('p')
-					.addClass('invalid-feedback').html(errors['title']);
+					.addClass('invalid-feedback').html(errors['description']);
 				} else{
-					$("#title").removeClass('is-invalid')
+					$("#description").removeClass('is-invalid')
 					.siblings('p')
 					.removeClass('invalid-feedback')
 					.html("");
 				}
 
-                if(errors['name']){
-					$("#name").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['name']);
-				} else{
-					$("#name").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
-                if(errors['project']){
-					$("#project").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['project']);
-				} else{
-					$("#project").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
-                if(errors['date']){
-					$("#date").addClass('is-invalid')
-					.siblings('p')
-					.addClass('invalid-feedback').html(errors['date']);
-				} else{
-					$("#date").removeClass('is-invalid')
-					.siblings('p')
-					.removeClass('invalid-feedback')
-					.html("");
-				}
+                
 
                 
 				

@@ -1,72 +1,90 @@
+<!-- number 2 -->
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>SJLV-Sofronio Jr. L. Valmera</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Spectator Panel</title>
+		<!-- Google Font: Source Sans Pro -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="{{asset('login/admin-assets/plugins/fontawesome-free/css/all.min.css')}}">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="{{asset('login/admin-assets/css/adminlte.min.css')}}">
+		<link rel="stylesheet" href="{{asset('login/admin-assets/css/custom.css')}}">
+	</head>
+	<body class="hold-transition login-page">
+		<div class="login-box">
+			<!-- /.login-logo -->
+			@include('admin.message')
+			<div class="card card-outline card-primary">
+			  	<div class="card-header text-center">
+					<a href="#" class="h3">Welcome Back</a>
+			  	</div>
+			  	<div class="card-body">
+					<p class="login-box-msg">Sign in to start your session</p>
+					<form action="{{route('spectator.spectatorauthenticate')}}" name="login" id="login" method="post">
+						@csrf
+				  		<div class="input-group mb-3">
+							<input type="email" name="email" id="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" required placeholder="Email">
+							<p></p>
+							<div class="input-group-append">
+					  			<div class="input-group-text">
+									<span class="fas fa-envelope"></span>
+					  			</div>
+							</div>
+				  		</div>
+				  		@error('email')
+				  		<p class="invalid-feedback">{{$message}}</p>
+				  		@enderror
+				  		<div class="input-group mb-3">
+							<input type="password" name="password" id="password" value="{{old('password')}}" required class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+							<p></p>
+							<div class="input-group-append">
+					  			<div class="input-group-text">
+									<span class="fas fa-lock"></span>
+					  			</div>
+							</div>
+				  		</div>
+				  		@error('password')
+				  		<p class="invalid-feedback">{{$message}}</p>
+				  		@enderror
+				  		<div class="row">
+							<!-- <div class="col-8">
+					  			<div class="icheck-primary">
+									<input type="checkbox" id="remember">
+									<label for="remember">
+						  				Remember Me
+									</label>
+					  			</div>
+							</div> -->
+							<!-- /.col -->
+							<div class="col-4">
+					  			<button type="submit" class="btn btn-primary btn-block">Login</button>
+							</div>
+							<!-- /.col -->
+				  		</div>
+					</form>
+		  			<p class="mb-1 mt-3">
+				  		<a href="#">Forgot Password?</a>
+					</p>					
+			  	</div>
+			  	<!-- /.card-body -->
+			</div>
+			<!-- /.card -->
+		</div>
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="{{asset('front-assets/lib/animate/animate.min.css')}}" rel="stylesheet">
-        <link href="{{asset('front-assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-        <link href="{{asset('front-assets/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="{{asset('front-assets/css/style.css')}}" rel="stylesheet">
-    </head>
-<section class=" section-10">
-    <div class="container">
-        <div class="login-form">    
-            <form action="{{ route('login') }}" method="post" name="loginForm" id="loginForm">
-                @csrf <!-- Laravel CSRF token -->
-                <h4 class="modal-title">Login</h4>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Email" id="email" name="email">
-                    <p></p>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" id="password" name="password">
-                    <p></p>
-                </div>
-                <div class="form-group small">
-                    <a href="#" class="forgot-link">Forgot Password?</a>
-                </div> 
-                <button type="submit" class="btn btn-dark btn-block btn-lg" value="Login">Login</button>
-            </form>			
-            <div class="text-center small">Don't have an account? <a href="{{ route('register') }}">Sign Up Now</a></div>
-        </div>
-    </div>
-</section>
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="{{asset('front-assets/lib/easing/easing.min.js')}}"></script>
-        <script src="{{asset('front-assets/lib/wow/wow.min.js')}}"></script>
-        <script src="{{asset('front-assets/lib/waypoints/waypoints.min.js')}}"></script>
-        <script src="{{asset('front-assets/lib/typed/typed.min.js')}}"></script>
-        <script src="{{asset('front-assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-        <script src="{{asset('front-assets/lib/isotope/isotope.pkgd.min.js')}}"></script>
-        <script src="{{asset('front-assets/lib/lightbox/js/lightbox.min.js')}}"></script>
-        
-        <!-- Contact Javascript File -->
-        <script src="{{asset('front-assets/mail/jqBootstrapValidation.min.js')}}"></script>
-        <script src="{{asset('front-assets/mail/contact.js')}}"></script>
-
-        <!-- Template Javascript -->
-        <script src="{{asset('front-assets/js/main.js')}}"></script>
-    
+		<script>
+	
+		<!-- ./wrapper -->
+		<!-- jQuery -->
+		<script src="{{asset('login/admin-assets/plugins/jquery/jquery.min.js')}}"></script>
+		<!-- Bootstrap 4 -->
+		<script src="{{asset('login/admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+		<!-- AdminLTE App -->
+		<script src="{{asset('login/admin-assets/js/adminlte.min.js')}}"></script>
+		<!-- AdminLTE for demo purposes -->
+		<script src="{{asset('login/admin-assets/js/demo.js')}}"></script>
+	</body>
 </html>
-
-
-
-
-

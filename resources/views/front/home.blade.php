@@ -13,6 +13,10 @@
                     @foreach (getProfiles() as $profile)
                         @if ($profile->image != "")
                             <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid">
+
+                            @else
+							<img  src="{{asset('uploads/profile/nopic/ggg.jpg')}}" alt="" class="img-fluid">
+                            
                             @endif
                             @endforeach
                          
@@ -380,8 +384,11 @@
                        
                         @if ($testimonial->image != "")
                             <img src="{{asset('uploads/testimonial/thumb/'.$testimonial->image)}}"  alt="Image"> 
+
+                        @else
+                         
+                            <img src="{{asset('uploads/profile/nopic/ggg.jpg')}}" alt="Image">
                             @endif
-                            <!-- <img src="{{asset('front-assets/img/lina.jpg')}}" alt="Image"> -->
                         </div>
                         <div class="testimonial-text">
                             <p>
@@ -391,18 +398,7 @@
                             <h4> {{$testimonial->profession}}</h4>
                         </div>
                     </div>
-                    <!-- <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="{{asset('front-assets/img/dexter.jpg')}}" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                        <p>
-                                tagpila lubi sof.
-                            </p>
-                            <h3>Dexter Mano</h3>
-                            <h4>Web Designer</h4>
-                        </div>
-                    </div> -->
+                 
                     @endforeach
                           
                 </div>
@@ -430,6 +426,8 @@
                             <div class="team-img">
                             @if ($member->image != "")
                             <img width="20" height="20" src="{{asset('uploads/member/thumb/'.$member->image)}}" alt="" class="img-fluid">
+                            @else
+                             <img width="20" height="20" src="{{asset('uploads/profile/nopic/ggg.jpg')}}" alt="" class="img-fluid">
                             @endif
                                 <!-- <img src="{{asset('front-assets/img/riz.jpg')}}" alt="Image"> -->
                             </div>
