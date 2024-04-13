@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\admin\AdminLogInController;
-use App\Http\Controllers\spectator\SpectatorLogInController;
+use App\Http\Controllers\spectator\SpectatorLoginController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\spectator\SpectatorHomeController;
@@ -64,9 +64,9 @@ Route::get('/',[FrontController::class,'index'])->name('front.home');
 Route::group(['prefix' => 'spectator'],function(){
    Route::group(['middleware' => 'spectator.guest'],function(){
 
-  Route::get('/login',[SpectatorLogInController::class,'spectatorindex'])->name('spectator.login');
+  Route::get('/login',[SpectatorLoginController::class,'spectatorindex'])->name('spectator.login');
 
-   Route::post('/spectatorauthenticate',[SpectatorLogInController::class,'spectatorauthenticate'])->name('spectator.spectatorauthenticate');
+   Route::post('/spectatorauthenticate',[SpectatorLoginController::class,'spectatorauthenticate'])->name('spectator.spectatorauthenticate');
 
       });
        Route::group(['middleware' => 'spectator.auth'],function(){

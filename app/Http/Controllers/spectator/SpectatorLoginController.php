@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
 
-class SpectatorLogInController extends Controller
+class SpectatorLoginController extends Controller
 {
    
     public function spectatorindex(){
