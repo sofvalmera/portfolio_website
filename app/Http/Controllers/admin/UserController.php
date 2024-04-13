@@ -37,6 +37,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required|min:4',
+            'role' => 'required|string|in:Admin,Spectator'
            
 
             
@@ -103,7 +104,6 @@ class UserController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->phone = $request->phone;
-         
             $user->role = $request->role;
             $user->password = $request->password;
             $user->save();

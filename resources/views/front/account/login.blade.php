@@ -25,9 +25,14 @@
     </head>
 <section class=" section-10">
     <div class="container">
+    @if (Session::has('success'))
+                <div class="alert alert-success">
+                        {{Session::get('success')}}
+                </div>  
+            @endif
         <div class="login-form">    
             <form action="{{ route('login') }}" method="post" name="loginForm" id="loginForm">
-                @csrf <!-- Laravel CSRF token -->
+                @csrf
                 <h4 class="modal-title">Login</h4>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Email" id="email" name="email">
@@ -42,7 +47,7 @@
                 </div> 
                 <button type="submit" class="btn btn-dark btn-block btn-lg" value="Login">Login</button>
             </form>			
-            <div class="text-center small">Don't have an account? <a href="{{ route('register') }}">Sign Up Now</a></div>
+            <div class="text-center small">Don't have an account? <a href="{{ route('account.register') }}">Sign Up Now</a></div>
         </div>
     </div>
 </section>

@@ -18,6 +18,8 @@ class SpectatorTestimonialController extends Controller
 {
     //
     public function index(Request $request){
+        // $user = auth()->user();
+        // $testimonials = $user->testimonials()->latest();
          $testimonials= Testimonial::latest();
          if(!empty($request->get('keyword'))){
 
@@ -47,6 +49,7 @@ class SpectatorTestimonialController extends Controller
            
           
             $testimonial->name = $request->name;
+            $testimonial->user_id = $request->user_id;
           
             $testimonial->profession = $request->profession;
             $testimonial->description = $request->description;
@@ -121,6 +124,7 @@ class SpectatorTestimonialController extends Controller
         
         if($validator->passes()){
             $testimonial->name = $request->name;
+            $testimonial->user_id = $request->user_id;
            
             $testimonial->profession = $request->profession;
             $testimonial->description = $request->description;

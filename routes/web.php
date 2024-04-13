@@ -45,14 +45,15 @@ Route::get('/',[FrontController::class,'index'])->name('front.home');
 
 // Route::group(['prefix' => 'account'],function(){
 //     Route::group(['middleware' => 'guest'],function(){
+//       Route::get('/register',[AuthController::class,'register'])->name('account.register');
+//       Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
 
 //    Route::get('/login',[AuthController::class,'login'])->name('account.login');
 //    Route::get('/login',[AuthController::class,'authenticate'])->name('account.authenticate');
 
 
 
-//     Route::get('/register',[AuthController::class,'register'])->name('account.register');
-//     Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
+   
 
 //        });
 //         Route::group(['middleware' => 'auth'],function(){

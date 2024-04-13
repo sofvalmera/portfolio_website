@@ -78,7 +78,7 @@
 $("#registerf").submit(function(event){
 		event.preventDefault();
 		// var element =$(this);
-
+        // $("button[type=submit]").prop('disable',true);
 
 		$("button[type=submit]").prop('disable',true);
 		$.ajax({
@@ -93,21 +93,21 @@ $("#registerf").submit(function(event){
                             if(response["status"] == false){
                     if(errors.name){
                         $("#name").siblings("p").addClass('invalid-feedback').html(errors.name);
-                        $("#name").addClass('is-invalid-feedback');
+                        $("#name").addClass('is-invalid');
                     }else {
                         $("#name").siblings("p").removeClass('invalid-feedback').html('');
                         $("#name").removeClass('is-invalid');
                     }
                     if(errors.email){
                         $("#email").siblings("p").addClass('invalid-feedback').html(errors.email);
-                        $("#email").addClass('is-invalid-feedback');
+                        $("#email").addClass('is-invalid');
                     }else {
                         $("#email").siblings("p").removeClass('invalid-feedback').html('');
                         $("#email").removeClass('is-invalid');
                     }
                     if(errors.password){
                         $("#password").siblings("p").addClass('invalid-feedback').html(errors.password);
-                        $("#password").addClass('is-invalid-feedback');
+                        $("#password").addClass('is-invalid');
                     }else {
                         $("#password").siblings("p").removeClass('invalid-feedback').html('');
                         $("#password").removeClass('is-invalid');
@@ -120,22 +120,25 @@ $("#registerf").submit(function(event){
 				}else{
                     $("#name").siblings("p").removeClass('invalid-feedback').html('');
                     $("#name").removeClass('is-invalid');
+                    $("#email").siblings("p").removeClass('invalid-feedback').html('');
+                    $("#email").removeClass('is-invalid');
 
-                    $("#email").siblings("p").addClass('invalid-feedback').html(errors.email);
-                        $("#email").addClass('is-invalid-feedback');
+                   
                         
                         $("#password").siblings("p").removeClass('invalid-feedback').html('');
                         $("#password").removeClass('is-invalid');
 
                         window.location.href="{{route('account.login')}}";
 
+                       
+
                 }
 				
 
-			}, error: function(jqXHR, exception){
+			}, error: function(JQXHR, exception){
 				console.log("Something Went Wrong");
 			}
-		})
+		});
 	});
 
 </script>

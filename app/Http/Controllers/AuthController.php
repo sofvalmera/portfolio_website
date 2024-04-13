@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -30,12 +31,12 @@ class AuthController extends Controller
             $user->email = $request->email;
             $user->phone = $request->phone;
             $user->password =Hash::make($request->password); 
-            $education->save();
+            $user->save();
 
           
 
 
-            $request->session()->flash('success',' You have been Registered Successfully');
+           session()->flash('success',' You have been Registered Successfully');
             return response()->json([
                 'status' => true,
                 'message' => ' Added Successfully'
