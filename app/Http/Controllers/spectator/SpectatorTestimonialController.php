@@ -49,7 +49,7 @@ class SpectatorTestimonialController extends Controller
            
           
             $testimonial->name = $request->name;
-            $testimonial->user_id = $request->user_id;
+            // $testimonial->user_id = $request->user_id;
           
             $testimonial->profession = $request->profession;
             $testimonial->description = $request->description;
@@ -124,7 +124,7 @@ class SpectatorTestimonialController extends Controller
         
         if($validator->passes()){
             $testimonial->name = $request->name;
-            $testimonial->user_id = $request->user_id;
+            // $testimonial->user_id = $request->user_id;
            
             $testimonial->profession = $request->profession;
             $testimonial->description = $request->description;
