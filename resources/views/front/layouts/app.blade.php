@@ -83,7 +83,7 @@
                         @if (getMembers()->isNotEmpty()) <a href="#team" class="nav-item nav-link">Team</a>@endif
                         @if (getContacts()->isNotEmpty())  <a href="#contact" class="nav-item nav-link">Contact</a>@endif
                         <a href="{{route('spectator.login')}}" class="nav-item nav-link" id="login-link">Login</a>
-                        <!-- <a href="#" class="nav-item nav-link" id="signup-link">Signup</a> -->
+                        <a href="{{route('spectator.register')}}" class="nav-item nav-link" id="signup-link">Register</a>
                           
                     </div>
                 </div>

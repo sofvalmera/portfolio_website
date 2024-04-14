@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 // use App\Models\TempImage;
 // use App\Http\Controllers\admin\TempImageController;
 // use Illuminate\Support\Facades\File;
@@ -37,7 +39,9 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required|min:4',
-            'role' => 'required|string|in:Admin,Spectator'
+            // 'role' => 'required|string|in:Admin,Spectator'
+            'role' => ['required', 'string', Rule::in(['Admin', 'Spectator'])],
+            
            
 
             
@@ -47,7 +51,8 @@ class UserController extends Controller
             $user=new User();
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->password = $request->password;
+            // $user->password = $request->password;
+            $user->password = Hash::make($request->password); 
             $user->phone = $request->phone;
            
             $user->role = $request->role;
@@ -97,6 +102,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required|min:4',
+            'role' => ['required', 'string', Rule::in(['Admin', 'Spectator'])],
             
         ]);
         
@@ -105,7 +111,8 @@ class UserController extends Controller
             $user->email = $request->email;
             $user->phone = $request->phone;
             $user->role = $request->role;
-            $user->password = $request->password;
+            $user->password = Hash::make($request->password); 
+            // $user->password = $request->password;
             $user->save();
 
 

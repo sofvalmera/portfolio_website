@@ -46,20 +46,9 @@
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link p-0 pr-3" data-toggle="dropdown" href="">
-						@if (getProfiles()->isNotEmpty())
-                    @foreach (getProfiles() as $profile)
 					
-                            <!-- <img width="20" height="20" src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="" class="img-fluid"> -->
-                           
-							@if ($profile->image != "")
-							<img src="{{asset('uploads/profile/thumb/'.$profile->image)}}" class='img-circle elevation-2' width="40" height="40" alt="">
-							
-							@endif
-
-							@endforeach
-							@else
 							<img  src="{{asset('uploads/profile/nopic/ggg.jpg')}}" class='img-circle elevation-2' width="40" height="40" alt="">
-                            @endif
+                          
 						</a>
 						
                             

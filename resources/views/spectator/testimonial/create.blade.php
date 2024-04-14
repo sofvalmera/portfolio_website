@@ -25,6 +25,31 @@
 						<div class="card">
 							<div class="card-body">								
 								<div class="row">
+
+								<div class="col-md-6">
+										<div class="mb-3">
+											<input type="hidden" id="image_id" name="image_id" value="">
+											<label for="image">Profile Picture</label>
+											<div id="image" class="dropzone dz-clickable">
+												<div class="dz-message needsclick">
+												<br>Drop files here or click to upload.<br><br>
+											    </div>
+										    </div>
+										</div>
+                                        @if(!empty($profile->image))
+                                        <div>
+                                            <img width="250" height="250"  src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="">
+                                        </div>
+                                        @endif
+									</div>	
+
+									<div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="description">Description</label>
+                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description"></textarea>
+                                                </div>
+                                            </div>   
+								
 									
                                     <div class="col-md-6">
 										<div class="mb-3">
@@ -41,29 +66,8 @@
 										</div>
 									</div>
                                   
-                                    <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="description">Description</label>
-                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description"></textarea>
-                                                </div>
-                                            </div>   
-								
-                                            <div class="col-md-6">
-										<div class="mb-3">
-											<input type="hidden" id="image_id" name="image_id" value="">
-											<label for="image">Image</label>
-											<div id="image" class="dropzone dz-clickable">
-												<div class="dz-message needsclick">
-												<br>Drop files here or click to upload.<br><br>
-											    </div>
-										    </div>
-										</div>
-                                        @if(!empty($profile->image))
-                                        <div>
-                                            <img width="250" height="250"  src="{{asset('uploads/profile/thumb/'.$profile->image)}}" alt="">
-                                        </div>
-                                        @endif
-									</div>	
+                                   
+                                           
 									
 								
 																			

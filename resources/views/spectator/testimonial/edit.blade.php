@@ -25,29 +25,14 @@
 						<div class="card">
 							<div class="card-body">								
 								<div class="row">
-                             
+
+
+
 									
-                                    <div class="col-md-6">
-										<div class="mb-3">
-											<label for="profession">Profession</label>
-											<input type="text" name="profession" id="profession" class="form-control" placeholder="Profession" value="{{$testimonial->profession}}">	
-										</div>
-									</div>
-                                   
-                                    <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="description">Description</label>
-                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$testimonial->description}}</textarea>
-                                                </div>
-                                    </div>                                            
-									
-		
-									
-									
-									<div class="col-md-6">
+								<div class="col-md-6">
 										<div class="mb-3">
 											<input type="hidden" id="image_id" name="image_id" value="">
-											<label for="image">Image</label>
+											<label for="image">Profile Picture</label>
 											<div id="image" class="dropzone dz-clickable">
 												<div class="dz-message needsclick">
 												<br>Drop files here or click to upload.<br><br>
@@ -59,7 +44,35 @@
                                             <img width="250" height="250"  src="{{asset('uploads/testimonial/thumb/'.$testimonial->image)}}" alt="">
                                         </div>
                                         @endif
-									</div>	
+								</div>	
+								<div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="description">Description</label>
+                                                    <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description">{{$testimonial->description}}</textarea>
+                                                </div>
+                                    </div>    
+
+								<div class="col-md-6">
+										<div class="mb-3">
+											<label for="name">Name</label>
+											<input type="text" readonly name="name" id="name" class="form-control" value="{{Auth::guard('spectator')->user()->name}}">	
+											<p></p>
+										</div>
+									</div>
+                             
+									
+                                    <div class="col-md-6">
+										<div class="mb-3">
+											<label for="profession">Profession</label>
+											<input type="text" name="profession" id="profession" class="form-control" placeholder="Profession" value="{{$testimonial->profession}}">	
+										</div>
+									</div>
+                                   
+                                                                          
+									
+		
+									
+								
 									
 
 																			

@@ -45,8 +45,8 @@
 								<table class="table table-hover text-nowrap">
 									<thead>
 										<tr>
-											<!-- <th width="60">ID</th> -->
-											<!-- <th>Name</th> -->
+											<th width="60">ID</th>
+											<th>Name</th>
 											<th>Profession</th>
 											<th>Description</th>
 											<!-- <th>Published Date</th> -->
@@ -62,8 +62,8 @@
 										@foreach($testimonials as $testimonial)
 										
 										<tr>
-											<!-- <td>{{$testimonial->id}}</td> -->
-											<!-- <td>{{$testimonial->name}}</td> -->
+											<td>{{$testimonial->id}}</td>
+											<td>{{$testimonial->name}}</td>
 											<td>{{$testimonial->profession}}</td>
 											<td>{{$testimonial->description}}</td>
 											<!-- <td>{{$testimonial->date}}</td> -->

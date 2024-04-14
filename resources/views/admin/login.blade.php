@@ -20,7 +20,11 @@
 			@include('admin.message')
 			<div class="card card-outline card-primary">
 			  	<div class="card-header text-center">
-					<a href="#" class="h3">Welcome Back</a>
+					<a href="#" class="h3">@if (getProfiles()->isNotEmpty())
+                        @foreach (getProfiles() as $profile) 
+                        {{$profile->textlogo}}  
+                         @endforeach
+                            @endif Admin Panel</a>
 			  	</div>
 			  	<div class="card-body">
 					<p class="login-box-msg">Sign in to start your session</p>
@@ -60,7 +64,7 @@
 					  			</div>
 							</div> -->
 							<!-- /.col -->
-							<div class="col-4">
+							<div class="col-12">
 					  			<button type="submit" class="btn btn-primary btn-block">Login</button>
 							</div>
 							<!-- /.col -->

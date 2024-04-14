@@ -19,6 +19,7 @@ use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SkillController;
 use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\spectator\SpectatorTestimonialController;
+use App\Http\Controllers\spectator\SpectatorProfileController;
 use App\Http\Controllers\admin\EducationController;
 use App\Http\Controllers\admin\ExperienceController;
 use App\Http\Controllers\FrontController;
@@ -64,8 +65,12 @@ Route::get('/',[FrontController::class,'index'])->name('front.home');
 Route::group(['prefix' => 'spectator'],function(){
    Route::group(['middleware' => 'spectator.guest'],function(){
 
-  Route::get('/login',[SpectatorLoginController::class,'spectatorindex'])->name('spectator.login');
 
+  Route::get('/register',[SpectatorLoginController::class,'spectatoradd'])->name('spectator.register');
+  Route::post('/register', [SpectatorLoginController::class, 'processRegister1'])->name('spectator.processRegister');
+
+
+  Route::get('/login',[SpectatorLoginController::class,'spectatorindex'])->name('spectator.login');
    Route::post('/spectatorauthenticate',[SpectatorLoginController::class,'spectatorauthenticate'])->name('spectator.spectatorauthenticate');
 
       });
@@ -81,6 +86,16 @@ Route::group(['prefix' => 'spectator'],function(){
        Route::get('/testimonials/{testimonial}/edit',[SpectatorTestimonialController::class,'edit'])->name('spectatortestimonials.edit');
        Route::put('/testimonials/{testimonial}',[SpectatorTestimonialController::class,'update'])->name('spectatortestimonials.update');
        Route::delete('/testimonials/{testimonial}',[SpectatorTestimonialController::class,'destroy'])->name('spectatortestimonials.delete');
+
+        // spectatorprofile route
+        Route::get('/profiles',[SpectatorProfileController::class,'index'])->name('profiles.index');
+        Route::get('/profiles/createdsasdaDDSAdefwJEhqgxgaygqytSUQISYFatsAS',[SpectatorProfileController::class,'create'])->name('profiles.create');
+       Route::post('/profiles',[SpectatorProfileController::class,'store'])->name('profiles.store');
+       Route::get('/profiles/{profile}/edit',[SpectatorProfileController::class,'edit'])->name('profiles.edit');
+       Route::put('/profiles/{profile}',[SpectatorProfileController::class,'update'])->name('profiles.update');
+       Route::delete('/profiles/{profile}',[SpectatorProfileController::class,'destroy'])->name('profiles.delete');
+
+
        });
       });
       
